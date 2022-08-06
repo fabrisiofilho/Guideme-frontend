@@ -1,0 +1,54 @@
+<div class="flex justify-content-center align-items-center">
+  <img src={{user.urlPhoto}} alt="" style="width: 200px;height: 200px;">
+</div>
+
+<div>
+  <h5>Alterar nome</h5>
+  <p-divider></p-divider>
+  <div class="flex align-items-center">
+    <span class="p-float-label">
+      <input id="float-input" type="text" [(ngModel)]="user.name" disabled="true" pInputText>
+      <label for="float-input">Nome</label>
+    </span>
+    <p-button icon="pi" class="ml-2">
+      <fa-icon [icon]="faPen">
+      </fa-icon>
+    </p-button>
+  </div>
+</div>
+
+<div>
+  <h5>Alterar senha</h5>
+  <p-divider></p-divider>
+  <div class="flex align-items-center">
+    <span class="p-float-label">
+      <input id="float-input" type="password" [(ngModel)]="user.username" disabled="true" pInputText>
+      <label for="float-input">Senha</label>
+    </span>
+    <p-button icon="pi" class="ml-2">
+      <fa-icon [icon]="faPen">
+      </fa-icon>
+    </p-button>
+  </div>
+</div>
+
+<div>
+  <h5>Alterar e-mail</h5>
+  <p-divider></p-divider>
+  <div class="flex align-items-center">
+    <span class="p-float-label">
+      <input id="float-input" type="text" [(ngModel)]="user.email" disabled="true" pInputText>
+      <label for="float-input">Email</label>
+    </span>
+    <p-button icon="pi" class="ml-2">
+      <fa-icon [icon]="faPen">
+      </fa-icon>
+    </p-button>
+  </div>
+</div>
+
+<p-divider></p-divider>
+
+<div>
+  <p-button label="Salvar" class="p-fluid" ></p-button>
+</div>

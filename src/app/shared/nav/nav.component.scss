@@ -1,0 +1,25 @@
+.nav {
+  width: 100vw;
+  background-color: #121212;
+  height: 60px;
+}
+
+.inter-nav {
+  max-width: 1200px;
+  width: 100%;
+}
+
+nav {
+  max-width: 400px;
+  width: 100%;
+}
+
+.perfil {
+  height: 40px;
+  background-color: rgb(33, 33, 33);
+  border-radius: 30px;
+}
+
+.perfil:hover {
+  cursor: pointer;
+}

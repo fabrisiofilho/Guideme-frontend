@@ -1,0 +1,8 @@
+<guideme-nav class="sticky top-0 z-5"></guideme-nav>
+<div class="body-content">
+  <div class="content">
+    <search class="w-full" (search)="buscarItens($event)" [title]="vendinha" [value]="value" [icon]="faFeatherPointed"></search>
+    <app-table [itens]="item" [icon]="faFeatherPointed" [buttonText]="text"></app-table>
+  </div>
+</div>
+

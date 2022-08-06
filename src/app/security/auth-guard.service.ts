@@ -16,6 +16,7 @@ export class AuthGuardService implements CanActivate {
 
   async checkAccess(route: ActivatedRouteSnapshot, routerState: RouterStateSnapshot): Promise<boolean> {
     if (!this.authService.isLoggedIn()) {
+      this.authService.isValidAcesso();
       this.router.navigate(['/login']);
     }
     return true;

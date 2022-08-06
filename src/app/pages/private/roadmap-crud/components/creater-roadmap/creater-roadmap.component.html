@@ -1,0 +1,45 @@
+<div class="flex align-items-center flex-column roadmap">
+  <div class="create-roadmap with-roadmap">
+    <div *ngIf="roadmap !== undefined" class="flex align-items-center justify-content-center w-full">
+      <h1>
+        {{roadmap.title}}
+      </h1>
+    </div>
+  </div>
+  <div *ngFor="let item of roadmap?.step" class="mt-3 w-full">
+    <div class="step">
+      <h2>{{item.title}}</h2>
+      <div class="flex">
+        <div class="layer bg-primary">
+          {{item.layer}}
+          <fa-icon [icon]="faLayerGroup" [size]=size>
+          </fa-icon>
+        </div>
+        <div class="layer bg-primary">
+          {{item.bountyXp}}
+          <fa-icon [icon]="faFeatherPointed" [size]=size>
+          </fa-icon>
+        </div>
+        <div class="layer bg-primary">
+          {{item.bountyCoin}}
+          <fa-icon [icon]="faCoins" [size]=size>
+          </fa-icon>
+        </div>
+      </div>
+      <div>
+        <button pButton pRipple type="button" icon=faPlus class="p-button-rounded btn m-1">
+          <fa-icon [icon]="faPlus" [size]=size>
+          </fa-icon>
+        </button>
+        <button pButton pRipple type="button" icon=faPencil class="p-button-rounded p-button-success btn m-1">
+          <fa-icon [icon]="faPencil" [size]=size>
+          </fa-icon>
+        </button>
+        <button pButton pRipple type="button" icon=faTrash class="p-button-rounded p-button-secondary btn m-1" (click)="deleteStep(item.id)">
+          <fa-icon [icon]="faTrash" [size]=size>
+          </fa-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

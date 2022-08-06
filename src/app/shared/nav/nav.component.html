@@ -1,0 +1,52 @@
+<div class="nav grid align-items-center px-4 m-0">
+  <div class="col-3"></div>
+
+  <div class="col-6 flex flex-row justify-content-center align-content-center">
+    <nav>
+      <div *ngIf="this.profile === 'ALUNO'" class="flex justify-content-between align-items-center">
+        <a [routerLink]="['/']" [ngClass]="isActivated('/') ? 'text-primary': 'text-white'">
+          <fa-icon [icon]="houseFire" [size]=size>
+          </fa-icon>
+        </a>
+        <a [routerLink]="['/roadmap']" [ngClass]="isActivated('/roadmap') ? 'text-primary': 'text-white'">
+          <fa-icon [icon]="road" [size]=size>
+          </fa-icon>
+        </a>
+        <a [routerLink]="['/store']" [ngClass]="isActivated('/store') ? 'text-primary': 'text-white'">
+          <fa-icon [icon]="shop" [size]=size>
+          </fa-icon>
+        </a>
+        <a [routerLink]="['/challenger']" [ngClass]="isActivated('/challenger') ? 'text-primary': 'text-white'">
+          <fa-icon [icon]="ranking" [size]=size>
+          </fa-icon>
+        </a>
+      </div>
+      <div *ngIf="this.profile === 'ADMIN'" class="flex justify-content-between align-items-center">
+        <a [routerLink]="['/']" [ngClass]="isActivated('/') ? 'text-primary': 'text-white'">
+          <fa-icon [icon]="houseFire" [size]=size>
+          </fa-icon>
+        </a>
+        <a [routerLink]="['/roadmap/admin']" [ngClass]="isActivated('/roadmap/admin') ? 'text-primary': 'text-white'">
+          <fa-icon [icon]="crudroad" [size]=size>
+          </fa-icon>
+        </a>
+        <a [routerLink]="['/store/admin']" [ngClass]="isActivated('/store/admin') ? 'text-primary': 'text-white'">
+          <fa-icon [icon]="crudshop" [size]=size>
+          </fa-icon>
+        </a>
+        <a [routerLink]="['/challenger/admin']" [ngClass]="isActivated('/challenger/admin') ? 'text-primary': 'text-white'">
+          <fa-icon [icon]="crudranking" [size]=size>
+          </fa-icon>
+        </a>
+      </div>
+    </nav>
+  </div>
+
+  <div class="col-3 flex justify-content-end">
+    <div class="flex justify-content-between align-items-center perfil p-0" (click)="menu.toggle($event)">
+      <div style="color: rgb(255, 255, 255); font-weight: 500;" class="p-4">{{name()}}</div>
+      <img src={{photo()}} alt="" style="width: 40px; height: 40px; border-radius: 60px;">
+  </div>
+  </div>
+</div>
+<p-menu #menu [popup]="true" [model]="items"></p-menu>

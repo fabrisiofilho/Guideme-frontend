@@ -1,7 +1,8 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,24 +12,38 @@ import { PublicModule } from './pages/public/public.module';
 import { MenuModule } from 'primeng/menu'
 import { ToastModule } from 'primeng/toast';
 import { AvatarModule } from 'primeng/avatar';
+import { AuthGuardService } from './security/auth-guard.service';
+import { AuthService } from './security/auth.service';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { MessageService } from 'primeng/api';
+import { ButtonModule } from 'primeng/button';
+import {DialogService, DynamicDialogModule} from 'primeng/dynamicdialog';
+import {ProgressBarModule} from 'primeng/progressbar';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
     MenuModule,
     AvatarModule,
     ToastModule,
+    FormsModule,
+    ButtonModule,
+    DynamicDialogModule,
+    ProgressBarModule,
 
     PublicModule,
-    PrivateModule
+    PrivateModule,
+    FontAwesomeModule
   ],
-  providers: [],
+  entryComponents:[],
+  providers: [AuthGuardService, AuthService, MessageService, DialogService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

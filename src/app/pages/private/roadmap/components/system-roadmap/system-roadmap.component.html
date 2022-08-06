@@ -1,0 +1,10 @@
+<div class="flex justify-content-center align-items-center flex-column">
+  <h2>{{roadmap.title}}</h2>
+  <h5>Roadmap</h5>
+</div>
+<div class="flex">
+  <div *ngFor="let item of roadmap.step" class="flex">
+    <card-roadmap [step]="item"></card-roadmap>
+    <p-divider layout="vertical"></p-divider>
+  </div>
+</div>

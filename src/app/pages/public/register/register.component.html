@@ -1,0 +1,59 @@
+<div class="w-screen h-screen flex flex-column justify-content-center align-items-center background-login">
+  <div class="w-30rem">
+    <div class="w full flex justify-content-center mb-7">
+      <img src="../../../../assets/img/icon.png" style="width: 150xp; height: 150px;">
+    </div>
+    <form
+    [formGroup]="registerForm"
+    (ngSubmit)="register()">
+      <div class="card">
+        <div class="flex flex-column">
+            <div class="flex align-items-center justify-content-center">
+                <div class="p-fluid w-30rem">
+                    <div class="field">
+                      <span class="p-float-label">
+                        <input id="name" type="text" formControlName="name" pInputText>
+                        <label for="name">Nome</label>
+                      </span>
+                    </div>
+                    <div class="field">
+                      <span class="p-float-label">
+                        <input id="username" type="text" formControlName="username" pInputText>
+                        <label for="username">Apelido</label>
+                      </span>
+                    </div>
+                    <div class="field">
+                      <span class="p-float-label">
+                        <input id="email" type="text" formControlName="email" pInputText>
+                        <label for="email">E-mail</label>
+                      </span>
+                    </div>
+                    <div class="field">
+                      <span class="p-float-label">
+                        <input id="password" type="password" formControlName="password" pInputText>
+                        <label for="password">Senha</label>
+                      </span>
+                    </div>
+                    <div class="field">
+                      <span class="p-float-label">
+                        <input id="confirmPassword" type="password" formControlName="confirmPassword" pInputText>
+                        <label for="confirmPassword">Confirmação de senha</label>
+                      </span>
+                    </div>
+                    <p-button label="Cadastrar" type="submit"></p-button>
+                  </div>
+            </div>
+            <div class="">
+                <p-divider layout="horizontal">
+                </p-divider>
+            </div>
+            <div class="flex align-items-center justify-content-center">
+              <div class="p-fluid w-22rem">
+                <p-button label="Voltar" styleClass="p-button-outlined" (onClick)="voltar()"></p-button>
+              </div>
+            </div>
+          </div>
+      </div>
+    </form>
+  </div>
+</div>
