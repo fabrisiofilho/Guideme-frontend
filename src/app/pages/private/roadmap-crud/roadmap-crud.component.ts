@@ -12,7 +12,7 @@ export class RoadmapCrudComponent implements OnInit {
   roadmap: Roadmap | undefined;
 
   constructor(private roadmapService: RoadmapService) {
-    this.roadmapService.findById("1").subscribe(it => {
+    this.roadmapService.findById().subscribe(it => {
       this.roadmap = it;
     });
   }

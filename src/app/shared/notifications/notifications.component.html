@@ -1,0 +1,31 @@
+<div class="btn-bell flex justify-content-center align-items-center mr-3" (click)="op.toggle($event)">
+  <i class="pi pi-bell p-text-secondary" pBadge style="font-size: 20px; color: white;" [value]=notifications.length.toString() ></i>
+</div>
+<p-overlayPanel #op>
+  <ng-template pTemplate>
+      <div *ngIf="notifications.length == 0">
+        Você não tem nenhuma notificação
+      </div>
+      <div *ngIf="notifications.length > 0">
+        <div *ngFor="let notification of notifications; let i = index" class="flex align-items-center justify-content-center notifications p-3" [class.mt-2]="validIndex(i)">
+          <div class="flex">
+            <div class="flex justify-content-center align-items-center mr-2">
+              <fa-icon [icon]="faEnvelope" [size]=size>
+              </fa-icon>
+            </div>
+            <div class="flex flex-column">
+              <div style="font-weight: bold;">
+                {{notification.type}}
+              </div>
+              <div>
+                {{notification.title}}
+              </div>
+            </div>
+          </div>
+          <button pButton pRipple type="button" icon="pi" class="p-button-rounded p-button-text ml-1" (click)="closeNoteficaiton(notification)">
+            <fa-icon [icon]="faXmark" [size]=size style="color: white;"></fa-icon>
+          </button>
+        </div>
+      </div>
+  </ng-template>
+</p-overlayPanel>

@@ -7,7 +7,9 @@
   .p-card {
     border-radius: 10px;
     overflow: hidden;
-    background-color: var(--surface-50);
+    background: linear-gradient(93.19deg, rgba(255, 255, 255, 0.114) -1.56%, rgba(255, 255, 255, 0.057) 103.9%);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
   }
   .p-card .p-card-content {
     padding: 0;

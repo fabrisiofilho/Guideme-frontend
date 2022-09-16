@@ -1,0 +1,33 @@
+.btn-bell{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(93.19deg, rgba(255, 255, 255, 0.114) -1.56%, rgba(255, 255, 255, 0.057) 103.9%);
+  backdrop-filter: blur(20px);
+}
+
+.btn-bell:hover{
+  cursor: pointer;
+}
+
+.menu {
+  right: 230px;
+  margin-top: 10px;
+  position: absolute;
+  border-radius: 20px;
+  width: 300px;
+  padding: 10px;
+  background: linear-gradient(93.19deg, rgba(255, 255, 255, 0.114) -1.56%, rgba(255, 255, 255, 0.057) 103.9%);
+  backdrop-filter: blur(20px);
+}
+
+.notifications{
+  display: flex;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  background: linear-gradient(93.19deg, rgba(255, 255, 255, 0.114) -1.56%, rgba(255, 255, 255, 0.057) 103.9%);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 8px;
+}

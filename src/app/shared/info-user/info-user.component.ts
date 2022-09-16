@@ -11,7 +11,7 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class InfoUserComponent implements OnInit {
 
-  user!: User;
+  user?: User;
 
   size: SizeProp = "sm";
 

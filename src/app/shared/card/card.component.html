@@ -1,0 +1,16 @@
+<div class="card relative">
+  <div class="card-content flex flex-column align-items-center justify-content-center p-3">
+    <span style="color: gray; font-size: 13px;">JavaScript</span>
+    <h3 class="m-1">{{item.title}}</h3>
+    <div class="my-1">
+      <span style="color: gray;">{{item.price}}{{item.bountyCoin}}</span>
+      <fa-icon [icon]="icon" [size]=size style="color: gray;" class="ml-2">
+      </fa-icon>
+    </div>
+    <p-button label={{buttonText}} class="absolute bottom-0 p-fluid m-2" styleClass="p-button">
+    </p-button>
+  </div>
+  <div class="card-icon">
+    <img src="../../../assets/img/js.png" alt="">
+  </div>
+</div>

@@ -1,35 +1,40 @@
-<div *ngIf="step.open && !step.done" class="card title-background">
-  <h3 class=>
-    {{step.title}}
-  </h3>
-  <h4 class="m-0 flex justify-content-between">
-    <p class="m-0">Conclusão</p>
-    <p class="m-0">0%</p>
-  </h4>
-  <p-progressBar [value]="step.conclusion" class="w-full"></p-progressBar>
-  <div class="placar mt-4">
-    <p class="m-0">+{{step.bountyXp}} Xp</p>
-    <p class="m-0">+{{step.bountyCoin}}
-      <fa-icon [icon]="faCoins" [size]=size>
-      </fa-icon>
-    </p>
+<div *ngIf="step.isOpen && !step.isDone" (mouseover)="effectCardOpen()" class="card card-open title-background relative">
+  <div class="card-content">
+    <h3 class="text-center">
+      {{step.title}}
+    </h3>
+    <h4 class="m-0 flex justify-content-between">
+      <p class="m-0">Conclusão</p>
+      <p class="m-0">0%</p>
+    </h4>
+    <p-progressBar [value]="step.conclusion" class="w-full"></p-progressBar>
+    <div class="placar mt-4">
+      <p class="m-0">+{{step.bountyXp}} Xp</p>
+      <p class="m-0">+{{step.bountyCoin}}
+        <fa-icon [icon]="faCoins" [size]=size>
+        </fa-icon>
+      </p>
+    </div>
+    <div class="flex justify-content-center align-items-center flex-column mt-3">
+      <h4 class="m-0">Dificuldade</h4>
+      <p-rating [ngModel]="step.difficulty" [readonly]="true" [stars]="5" [cancel]="false"></p-rating>
+    </div>
   </div>
-  <div class="flex justify-content-center align-items-center flex-column mt-3">
-    <h4 class="m-0">Confiança</h4>
-    <p-rating [ngModel]="step.difficulty" [readonly]="true" [stars]="5" [cancel]="false"></p-rating>
+  <div class="card-icon">
+    <img src="../../../../../../assets/img/js.png" alt="">
   </div>
 </div>
 
-<div *ngIf="!step.open && !step.done" class="card title-background">
-  <div class="flex justify-content-center align-items-center w-full h-full">
+<div *ngIf="!step.isOpen && !step.isDone" (mouseover)="effectCardClose()" class="card title-background">
+  <div class="flex justify-content-center align-items-center w-full h-full card-opa">
     <fa-icon [icon]="faLock" [size]=size2>
     </fa-icon>
   </div>
 </div>
 
-<div *ngIf="!step.open && step.done" class="card title-background">
-  <div class="flex justify-content-center align-items-center w-full h-full">
-    <fa-icon [icon]="faCircleCheck" [size]=size2>
+<div *ngIf="!step.isOpen && step.isDone"(mouseover)="effectCardConcluded()" class="card card-open title-background">
+  <div class="flex justify-content-center align-items-center w-full h-full card-opa">
+    <fa-icon [icon]="faCircleCheck" [size]=size2 style="color: rgb(0, 255, 166);">
     </fa-icon>
   </div>
 </div>

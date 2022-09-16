@@ -18,7 +18,7 @@ export class ChallengerComponent implements OnInit {
   itens?: Pageable<Challenger>;
   item: Challenger[] = [];
   vendinha: string = "vendinha";
-  text: string = "Fazer";
+  text: string = "Realizar";
 
   value!: number;
 

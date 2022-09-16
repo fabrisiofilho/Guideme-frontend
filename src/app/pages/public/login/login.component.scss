@@ -3,3 +3,9 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+.side {
+  background: linear-gradient(152.6deg, rgba(224, 230, 255, 0.81) 0%, rgba(8, 13, 37, 0.68) 0%, rgba(8, 7, 63, 0.68) 0.01%, rgba(42, 41, 60, 0.56) 105.14%);
+  backdrop-filter: blur(10px);
+  border-radius: 0px 30px 30px 0px;
+}

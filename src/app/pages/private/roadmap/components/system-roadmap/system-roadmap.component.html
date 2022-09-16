@@ -2,9 +2,11 @@
   <h2>{{roadmap.title}}</h2>
   <h5>Roadmap</h5>
 </div>
-<div class="flex">
-  <div *ngFor="let item of roadmap.step" class="flex">
-    <card-roadmap [step]="item"></card-roadmap>
-    <p-divider layout="vertical"></p-divider>
+<div class="flex flex-column">
+  <div *ngFor="let layer of roadmap.layers" class="flex flex-column">
+    <div class="grid justify-content-center align-content-center">
+      <card-roadmap class="m-3" (click)="openStep(step)" *ngFor="let step of layer.steps" [step]="step"></card-roadmap>
+    </div>
+    <p-divider layout="horizontal"></p-divider>
   </div>
 </div>

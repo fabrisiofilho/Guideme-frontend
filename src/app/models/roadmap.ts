@@ -1,7 +1,7 @@
-import { Step } from "./step";
+import { Layer } from "./Layer";
 
 export interface Roadmap {
   id: number;
   title: string;
-  step: Step[];
+  layers: Layer[];
 }

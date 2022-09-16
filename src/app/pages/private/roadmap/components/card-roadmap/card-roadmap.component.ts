@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { SizeProp } from '@fortawesome/fontawesome-svg-core';
+import { Layer, SizeProp } from '@fortawesome/fontawesome-svg-core';
 import { faCircleCheck, faCoins, faFeatherPointed, faLock} from '@fortawesome/free-solid-svg-icons';
 import { Step } from 'src/app/models/step';
 
@@ -23,6 +23,16 @@ export class CardRoadmapComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  effectCardOpen() {
+  }
+
+  effectCardClose() {
+
+  }
+
+  effectCardConcluded() {
   }
 
 }

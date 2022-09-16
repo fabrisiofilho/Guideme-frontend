@@ -1,11 +1,15 @@
 .bem-vindo {
   display: flex;
   justify-content: center;
-  flex-direction: column;
   align-items: center;
   width: 100%;
   height: 50px;
   border-radius: 10px;
   font-size: 30px;
   font-weight: bold;
+}
+
+.sidenav {
+  width: 280px;
+  height: 100vh;
 }

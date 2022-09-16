@@ -6,12 +6,12 @@
       </h1>
     </div>
   </div>
-  <div *ngFor="let item of roadmap?.step" class="mt-3 w-full">
-    <div class="step">
+  <div *ngFor="let layer of roadmap?.layers">
+    <div class="step" *ngFor="let item of layer.steps">
       <h2>{{item.title}}</h2>
       <div class="flex">
         <div class="layer bg-primary">
-          {{item.layer}}
+          {{layer.id}}
           <fa-icon [icon]="faLayerGroup" [size]=size>
           </fa-icon>
         </div>
@@ -41,5 +41,6 @@
         </button>
       </div>
     </div>
+
   </div>
 </div>

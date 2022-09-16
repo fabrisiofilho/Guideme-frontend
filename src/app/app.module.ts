@@ -19,10 +19,16 @@ import { MessageService } from 'primeng/api';
 import { ButtonModule } from 'primeng/button';
 import {DialogService, DynamicDialogModule} from 'primeng/dynamicdialog';
 import {ProgressBarModule} from 'primeng/progressbar';
+import {FileUploadModule} from 'primeng/fileupload';
+import {ProgressSpinnerModule} from 'primeng/progressspinner';
+import {OverlayPanelModule} from 'primeng/overlaypanel';
+import { ValidationsComponent } from './shared/validations/validations.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
+    ValidationsComponent
   ],
   imports: [
     BrowserModule,
@@ -37,6 +43,9 @@ import {ProgressBarModule} from 'primeng/progressbar';
     ButtonModule,
     DynamicDialogModule,
     ProgressBarModule,
+    FileUploadModule,
+    ProgressSpinnerModule,
+    OverlayPanelModule,
 
     PublicModule,
     PrivateModule,

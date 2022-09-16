@@ -1,22 +1,3 @@
 <div class="flex flex-wrap justify-content-center">
-  <p-card class="card-1" *ngFor="let item of itens">
-    <ng-template pTemplate="header" class="p-0">
-        <img src="assets/img/background-login.png" alt="">
-    </ng-template>
-    <div class="flex justify-content-around align-items-center">
-      <h4 class="my-2">
-        {{item.title}}
-      </h4>
-    </div>
-    <ng-template pTemplate="footer">
-      <div class="flex justify-content-around align-items-center flex-column">
-        <h4 class="my-2">
-          {{item.price || item.points}}
-          <fa-icon [icon]="icon" [size]=size>
-          </fa-icon>
-        </h4>
-        <p-button label={{buttonText}} class="p-fluid w-12"></p-button>
-      </div>
-    </ng-template>
-  </p-card>
+  <guideme-card class="col-fixed" *ngFor="let item of itens" [item]="item"[buttonText]="buttonText" [icon]="icon"></guideme-card>
 </div>

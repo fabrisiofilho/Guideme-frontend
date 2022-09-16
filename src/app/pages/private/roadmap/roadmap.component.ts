@@ -9,6 +9,8 @@ import { RoadmapService } from 'src/app/services/roadmap.service';
 })
 export class RoadmapComponent implements OnInit {
 
+  loading: boolean = true;
+
   roadmap?: Roadmap;
 
   constructor(private roadmapService: RoadmapService) {
@@ -19,9 +21,9 @@ export class RoadmapComponent implements OnInit {
   }
 
   getRoadmap() {
-    this.roadmapService.findById("1").subscribe(it => {
+    this.roadmapService.findById().subscribe(it => {
       this.roadmap = it;
-      this.roadmap?.step.sort((a, b) => {
+      this.roadmap?.layers.sort((a, b) => {
         if (a.id > b.id) {
           return 1;
         }
@@ -30,6 +32,7 @@ export class RoadmapComponent implements OnInit {
         }
         return 0;
       });
+      this.loading = false;
     });
   }
 

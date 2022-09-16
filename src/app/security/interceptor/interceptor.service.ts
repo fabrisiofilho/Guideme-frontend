@@ -17,7 +17,11 @@ export class Interceptor implements HttpInterceptor {
 
  intercept( request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     const clonedRequest = request.clone({ headers: request.headers.append('X-Authorization', `${localStorage.getItem("token")}`) });
-    this.authService.isValidAcesso();
+    if (!request.url.includes("refreshToken")) {
+      if (!request.url.includes("login")) {
+        this.authService.isValidAcesso();
+      }
+    }
     return next.handle(clonedRequest);
   }
 

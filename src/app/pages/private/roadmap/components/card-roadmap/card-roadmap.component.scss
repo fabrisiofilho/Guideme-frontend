@@ -1,20 +1,27 @@
 .card {
-  width: 250px;
-  height: 280px;
-  background-color: #2D2D2D;
-  padding: 20px;
-  border-radius: 20px;
+  width: 100%;
+  min-width: 250px;
+  height: 350px;
+  background-image: url(../../../../../../assets/img/background-card.jpg);
+  background-size: cover;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
-.title-background {
-  background-image: url(../../../../../../assets/img/background-login.png);
+.card-open:hover{
+  cursor: pointer;
+  transition: 0.2s;
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  z-index: 10;
 }
 
 .placar {
-  background-color: #363636;
+  background: linear-gradient(93.19deg, rgba(255, 255, 255, 0.114) -1.56%, rgba(255, 255, 255, 0.057) 103.9%);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
   width: 200px;
   padding: 10px;
-  border-radius: 20px;
 }
 
 ::ng-deep {
@@ -22,4 +29,34 @@
     height: 10px;
     border-radius: 40px;
   }
+}
+
+.card-icon{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: absolute;
+  left: 20px;
+  top: 50px;
+  display: flex;
+  overflow: hidden;
+}
+
+.card-opa {
+  background: linear-gradient(93.19deg, rgba(255, 255, 255, 0.114) -1.56%, rgba(255, 255, 255, 0.057) 103.9%);
+  backdrop-filter: blur(10px);
+}
+
+.card-content {
+  background: linear-gradient(93.19deg, rgba(255, 255, 255, 0.114) -1.56%, rgba(255, 255, 255, 0.057) 103.9%);
+  backdrop-filter: blur(10px);
+  border-radius: 0px 0px 10px 10px;
+  width: 100%;
+  height: 280px;
+  position: absolute;
+  padding: 10px;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

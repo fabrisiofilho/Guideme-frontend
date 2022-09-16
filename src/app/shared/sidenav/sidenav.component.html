@@ -1,0 +1,51 @@
+<div class="sidenav flex flex-column h-full align-items-center  p-4">
+  <div class="font-bold fa-2x mb-5">
+    <strong>GUIDEME</strong><i style="color: #7825B9;">.js</i>
+  </div>
+  <div class="flex flex-column justify-content-center align-content-center">
+    <div *ngIf="this.profile === 'ALUNO'" class="flex flex-column justify-content-evenly align-items-center w-full" style="width: 250px;">
+      <a [routerLink]="['/']" [ngClass]="isActivated('/') ? 'text-primary': 'text-white'" style="text-decoration: none;" class="flex justify-content-center align-items-center">
+        <fa-icon [icon]="houseFire" [size]=size>
+        </fa-icon>
+        <h3 class="ml-2">Home</h3>
+      </a>
+      <a [routerLink]="['/roadmap']" [ngClass]="isActivated('/roadmap') ? 'text-primary': 'text-white'" style="text-decoration: none;" class="flex justify-content-center align-items-center">
+        <fa-icon [icon]="road" [size]=size>
+        </fa-icon>
+        <h3 class="ml-2">Roadmap</h3>
+      </a>
+      <a [routerLink]="['/store']" [ngClass]="isActivated('/store') ? 'text-primary': 'text-white'" style="text-decoration: none;" class="flex justify-content-center align-items-center">
+        <fa-icon [icon]="shop" [size]=size>
+        </fa-icon>
+        <h3 class="ml-2">Store</h3>
+      </a>
+      <a [routerLink]="['/challenger']" [ngClass]="isActivated('/challenger') ? 'text-primary': 'text-white'" style="text-decoration: none;" class="flex justify-content-center align-items-center">
+        <fa-icon [icon]="ranking" [size]=size>
+        </fa-icon>
+        <h3 class="ml-2">Challenger</h3>
+      </a>
+    </div>
+    <div *ngIf="this.profile === 'ADMIN'" class="flex flex-column justify-content-evenly align-items-center w-full" style="width: 250px;">
+      <a [routerLink]="['/']" [ngClass]="isActivated('/') ? 'text-primary': 'text-white'" style="text-decoration: none;" class="flex justify-content-center align-items-center">
+        <fa-icon [icon]="houseFire" [size]=size>
+        </fa-icon>
+        <h3 class="ml-2">Home</h3>
+      </a>
+      <a [routerLink]="['/roadmap/admin']" [ngClass]="isActivated('/roadmap/admin') ? 'text-primary': 'text-white'" style="text-decoration: none;" class="flex justify-content-center align-items-center">
+        <fa-icon [icon]="crudroad" [size]=size>
+        </fa-icon>
+        <h3 class="ml-2">Create Roadmap</h3>
+      </a>
+      <a [routerLink]="['/store/admin']" [ngClass]="isActivated('/store/admin') ? 'text-primary': 'text-white'" style="text-decoration: none;" class="flex justify-content-center align-items-center">
+        <fa-icon [icon]="crudshop" [size]=size>
+        </fa-icon>
+        <h3 class="ml-2">Create Items</h3>
+      </a>
+      <a [routerLink]="['/challenger/admin']" [ngClass]="isActivated('/challenger/admin') ? 'text-primary': 'text-white'" style="text-decoration: none;" class="flex justify-content-center align-items-center">
+        <fa-icon [icon]="crudranking" [size]=size>
+        </fa-icon>
+        <h3 class="ml-2">Create Challenger</h3>
+      </a>
+    </div>
+  </div>
+</div>

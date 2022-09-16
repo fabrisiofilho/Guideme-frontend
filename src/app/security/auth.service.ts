@@ -63,6 +63,7 @@ export class AuthService {
 
   refreshToken(refresh: RefreshToken) {
     this.http.post<RefreshToken>(this.URL + "/auth/refreshToken", refresh).subscribe(it => {
+      localStorage.setItem("user_email", it.email);
       localStorage.setItem("token", it.token);
       localStorage.setItem("refresh_token", it.refreshToken);
     })

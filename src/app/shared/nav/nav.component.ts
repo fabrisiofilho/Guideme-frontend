@@ -3,7 +3,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import {MenuItem} from 'primeng/api';
 import { AuthService } from 'src/app/security/auth.service';
 
-import { faHouseFire } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faBell, faCoins, faFeatherPointed, faHouseFire } from '@fortawesome/free-solid-svg-icons';
 import { faRoad } from '@fortawesome/free-solid-svg-icons';
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 import { faBrain } from '@fortawesome/free-solid-svg-icons';
@@ -25,7 +25,16 @@ import { ConfigComponent } from '../config/config.component';
 })
 export class NavComponent implements OnInit {
 
+  openSide = false;
+
   profile: string | null;
+
+  faBars = faBars;
+  faBell = faBell;
+
+  faFeatherPointed = faFeatherPointed;
+  faCoins = faCoins;
+  sizeSm: SizeProp = "sm";
 
   houseFire = faHouseFire;
   road = faRoad;

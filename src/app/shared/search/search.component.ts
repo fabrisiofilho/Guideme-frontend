@@ -15,9 +15,6 @@ export class SearchComponent implements OnInit {
   search = new EventEmitter<string>();
 
   @Input()
-  icon: any;
-
-  @Input()
   value?: number;
 
   query: string = "";

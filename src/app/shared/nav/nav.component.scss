@@ -1,7 +1,12 @@
 .nav {
-  width: 100vw;
-  background-color: #121212;
+  width: 100%;
+  background-color: transparent;
   height: 60px;
+}
+
+img {
+  width: 100%;
+  height: auto;
 }
 
 .inter-nav {
@@ -16,10 +21,26 @@ nav {
 
 .perfil {
   height: 40px;
-  background-color: rgb(33, 33, 33);
-  border-radius: 30px;
+  background: linear-gradient(93.19deg, rgba(255, 255, 255, 0.114) -1.56%, rgba(255, 255, 255, 0.057) 103.9%);
+  backdrop-filter: blur(10px);
+  border-radius: 10px 30px 30px 10px;
 }
 
 .perfil:hover {
   cursor: pointer;
+}
+
+.placar {
+  width: 200px;
+  background: linear-gradient(93.19deg, rgba(255, 255, 255, 0.114) -1.56%, rgba(255, 255, 255, 0.057) 103.9%);
+  backdrop-filter: blur(20px);
+  border-radius: 10px;
+}
+
+.btn-bell{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(93.19deg, rgba(255, 255, 255, 0.114) -1.56%, rgba(255, 255, 255, 0.057) 103.9%);
+  backdrop-filter: blur(20px);
 }

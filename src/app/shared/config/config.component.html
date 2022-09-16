@@ -1,1 +1,58 @@
-<p>config works!</p>
+<div class="flex flex-column justify-content-center align-items-center">
+  <img src={{urlPhoto}} alt="" style="width: 200px;height: 200px; object-fit: cover;">
+  <p-fileUpload class="mt-3" mode="basic" name="attachments" [auto]="true" chooseIcon="pi pi-image" [customUpload]="true" (uploadHandler)="uploadAvatar($event)" accept="image/*"></p-fileUpload>
+</div>
+
+<form [formGroup]="userForm"
+(ngSubmit)="salvar()">
+  <div>
+    <h5>Alterar nome</h5>
+    <p-divider></p-divider>
+    <div class="flex align-items-center">
+      <span class="p-float-label">
+        <input id="nome" type="text" formControlName="name" pInputText>
+        <label for="float-input">Nome</label>
+      </span>
+      <p-button icon="pi" class="ml-2" (click)="enableInput('name')">
+        <fa-icon [icon]="faPen">
+        </fa-icon>
+      </p-button>
+    </div>
+  </div>
+
+  <div>
+    <h5>Alterar senha</h5>
+    <p-divider></p-divider>
+    <div class="flex align-items-center">
+      <span class="p-float-label">
+        <input id="senha" type="password" formControlName="password" pInputText>
+        <label for="float-input">Senha</label>
+      </span>
+      <p-button icon="pi" class="ml-2" (click)="enableInput('password')">
+        <fa-icon [icon]="faPen">
+        </fa-icon>
+      </p-button>
+    </div>
+  </div>
+
+  <div>
+    <h5>Alterar e-mail</h5>
+    <p-divider></p-divider>
+    <div class="flex align-items-center">
+      <span class="p-float-label">
+        <input id="email" type="text" formControlName="email" pInputText>
+        <label for="float-input">Email</label>
+      </span>
+      <p-button icon="pi" class="ml-2" (click)="enableInput('email')">
+        <fa-icon [icon]="faPen">
+        </fa-icon>
+      </p-button>
+    </div>
+  </div>
+
+  <p-divider></p-divider>
+
+  <div>
+    <p-button label="Salvar" type="submit" class="p-fluid" ></p-button>
+  </div>
+</form>

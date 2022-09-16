@@ -17,8 +17,8 @@ export class RoadmapService {
     return this.http.post<Roadmap>(this.URL + "/roadmap", roadmap);
   }
 
-  findById(id: string) {
-    return this.http.get<Roadmap>(this.URL + "/roadmap/find/" + id);
+  findById() {
+    return this.http.get<Roadmap>(this.URL + "/roadmap/get");
   }
 
   deleteById(id: string) {

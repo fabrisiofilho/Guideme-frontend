@@ -1,52 +1,31 @@
 <div class="nav grid align-items-center px-4 m-0">
-  <div class="col-3"></div>
-
-  <div class="col-6 flex flex-row justify-content-center align-content-center">
-    <nav>
-      <div *ngIf="this.profile === 'ALUNO'" class="flex justify-content-between align-items-center">
-        <a [routerLink]="['/']" [ngClass]="isActivated('/') ? 'text-primary': 'text-white'">
-          <fa-icon [icon]="houseFire" [size]=size>
-          </fa-icon>
-        </a>
-        <a [routerLink]="['/roadmap']" [ngClass]="isActivated('/roadmap') ? 'text-primary': 'text-white'">
-          <fa-icon [icon]="road" [size]=size>
-          </fa-icon>
-        </a>
-        <a [routerLink]="['/store']" [ngClass]="isActivated('/store') ? 'text-primary': 'text-white'">
-          <fa-icon [icon]="shop" [size]=size>
-          </fa-icon>
-        </a>
-        <a [routerLink]="['/challenger']" [ngClass]="isActivated('/challenger') ? 'text-primary': 'text-white'">
-          <fa-icon [icon]="ranking" [size]=size>
-          </fa-icon>
-        </a>
+  <p-sidebar [(visible)]="openSide" [baseZIndex]="1">
+    <guideme-sidenav></guideme-sidenav>
+  </p-sidebar>
+  <div class="col-6 flex justify-content-start align-items-center">
+    <button pButton pRipple type="button" icon="pi" (click)="openSide = true" class="p-button-rounded p-button-text mr-4">
+      <fa-icon [icon]="faBars" [size]=size></fa-icon>
+    </button>
+    <div class="grid justify-content-evenly align-items-center placar p-1">
+      <div class="m-2">
+        <fa-icon [icon]="faCoins" [size]=sizeSm style="color: #8F00FF;">
+        </fa-icon>
+        <span class="ml-2 font-bold">{{123}}</span>
       </div>
-      <div *ngIf="this.profile === 'ADMIN'" class="flex justify-content-between align-items-center">
-        <a [routerLink]="['/']" [ngClass]="isActivated('/') ? 'text-primary': 'text-white'">
-          <fa-icon [icon]="houseFire" [size]=size>
-          </fa-icon>
-        </a>
-        <a [routerLink]="['/roadmap/admin']" [ngClass]="isActivated('/roadmap/admin') ? 'text-primary': 'text-white'">
-          <fa-icon [icon]="crudroad" [size]=size>
-          </fa-icon>
-        </a>
-        <a [routerLink]="['/store/admin']" [ngClass]="isActivated('/store/admin') ? 'text-primary': 'text-white'">
-          <fa-icon [icon]="crudshop" [size]=size>
-          </fa-icon>
-        </a>
-        <a [routerLink]="['/challenger/admin']" [ngClass]="isActivated('/challenger/admin') ? 'text-primary': 'text-white'">
-          <fa-icon [icon]="crudranking" [size]=size>
-          </fa-icon>
-        </a>
+      <div class="m-2">
+        <fa-icon [icon]="faFeatherPointed" [size]=sizeSm style="color: #8F00FF;">
+        </fa-icon>
+        <span class="ml-2 font-bold">{{123}}</span>
       </div>
-    </nav>
+    </div>
   </div>
 
-  <div class="col-3 flex justify-content-end">
+  <div class="col-6 flex justify-content-end">
+    <notifications></notifications>
     <div class="flex justify-content-between align-items-center perfil p-0" (click)="menu.toggle($event)">
-      <div style="color: rgb(255, 255, 255); font-weight: 500;" class="p-4">{{name()}}</div>
-      <img src={{photo()}} alt="" style="width: 40px; height: 40px; border-radius: 60px;">
+      <div style="color: rgb(255, 255, 255); font-weight: 500;" class="p-4 text-center">{{name()}}</div>
+      <img src={{photo()}} alt="" style="width: 40px;height: 40px; object-fit: cover; border-radius: 50%;">
+    </div>
   </div>
-  </div>
+  <p-menu #menu [popup]="true" [model]="items"></p-menu>
 </div>
-<p-menu #menu [popup]="true" [model]="items"></p-menu>

@@ -1,19 +1,19 @@
-<div class="card-perfil p-4 flex justify-content-between align-items-center flex-column">
-  <h3>{{user.name}}</h3>
+<div class="card-perfil p-4 flex justify-content-between align-items-center flex-column ">
+  <h3>{{user?.name}}</h3>
   <div class="w-full">
     <div class="flex justify-content-between align-items-end">
-      <h2 class="m-0 mb-1 text-right">{{user.exps}} LvL</h2>
-      <h6 class="m-0 mb-1 text-right text-300 text-xs">{{user.exps}} xp /100 xp</h6>
+      <h2 class="m-0 mb-1 text-right">{{user?.exps}} LvL</h2>
+      <h6 class="m-0 mb-1 text-right text-300 text-xs">{{user?.exps}} xp /100 xp</h6>
     </div>
-    <p-progressBar [value]="user.exps" class="w-full"></p-progressBar>
+    <p-progressBar [value]="user?.exps" class="w-full"></p-progressBar>
   </div>
   <div class="flex justify-content-center align-items-center bg-gray-700 w-full h-3rem" style="border-radius: 60px;">
-    <h4 class="mr-2">{{user.points}}</h4>
+    <h4 class="mr-2">{{user?.points}}</h4>
     <fa-icon [icon]="faFeatherPointed" [size]=size>
     </fa-icon>
   </div>
   <div class="flex justify-content-center align-items-center flex-column">
     <h4 class="m-0">Confiança</h4>
-    <p-rating [ngModel]="user.coins" [readonly]="true" [stars]="5" [cancel]="false"></p-rating>
+    <p-rating [ngModel]="user?.coins" [readonly]="true" [stars]="5" [cancel]="false"></p-rating>
   </div>
 </div>
