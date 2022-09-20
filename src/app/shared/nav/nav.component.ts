@@ -17,6 +17,8 @@ import { FirebaseService } from 'src/app/services/firebase.service';
 import { DialogService } from 'primeng/dynamicdialog';
 import { ProfileComponent } from '../profile/profile.component';
 import { ConfigComponent } from '../config/config.component';
+import { UserService } from 'src/app/services/user.service';
+import { User } from 'src/app/security/models/user';
 
 @Component({
   selector: 'guideme-nav',
@@ -49,10 +51,14 @@ export class NavComponent implements OnInit {
 
   items: MenuItem[] = [];
 
-  constructor(private authService: AuthService,
+  user?: User;
+
+  constructor(private userService: UserService,
+              private authService: AuthService,
               private router: Router,
               public dialogService: DialogService) {
                 this.profile = localStorage.getItem("profile");
+                this.findPointsAndCoins();
               }
 
   ngOnInit(): void {
@@ -88,6 +94,15 @@ export class NavComponent implements OnInit {
         header: 'Configurações',
         width: '70%'
     });
+  }
+
+  findPointsAndCoins() {
+    let email = localStorage.getItem("user_email");
+    if (email) {
+      this.userService.findUserByEmail(email).subscribe((it)=> {
+        this.user = it;
+      });
+    }
   }
 
 }
