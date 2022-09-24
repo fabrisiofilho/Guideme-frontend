@@ -46,6 +46,15 @@ import { BadgeModule } from 'primeng/badge';
 import { RankingComponent } from 'src/app/shared/ranking/ranking.component';
 import { TotalRankingComponent } from 'src/app/shared/total-ranking/total-ranking.component';
 import { TableModule } from 'primeng/table';
+import { FormStoreComponent } from './store-crud/components/form-store/form-store.component';
+import { TableStoreComponent } from './store-crud/components/table-store/table-store.component';
+import { TableChallengerComponent } from './challenger-crud/components/table-challenger/table-challenger.component';
+import { FormChallengerComponent } from './challenger-crud/components/form-challenger/form-challenger.component';
+import { AddRoadmapComponent } from './roadmap-crud/components/add-roadmap/add-roadmap.component';
+import {RadioButtonModule} from 'primeng/radiobutton';
+import {InputTextareaModule} from 'primeng/inputtextarea';
+import {PaginatorModule} from 'primeng/paginator';
+
 
 @NgModule({
   declarations: [
@@ -71,7 +80,12 @@ import { TableModule } from 'primeng/table';
     CardComponent,
     NotificationsComponent,
     RankingComponent,
-    TotalRankingComponent
+    TotalRankingComponent,
+    FormStoreComponent,
+    TableStoreComponent,
+    TableChallengerComponent,
+    FormChallengerComponent,
+    AddRoadmapComponent
   ],
   imports: [
     CommonModule,
@@ -94,7 +108,10 @@ import { TableModule } from 'primeng/table';
     SidebarModule,
     OverlayPanelModule,
     BadgeModule,
-    TableModule
+    TableModule,
+    RadioButtonModule,
+    InputTextareaModule,
+    PaginatorModule
   ],
   providers: [RouterGuardAdmin, RouterGuardAluno]
 })

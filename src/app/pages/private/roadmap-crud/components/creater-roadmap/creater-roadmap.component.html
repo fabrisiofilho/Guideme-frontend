@@ -6,10 +6,10 @@
       </h1>
     </div>
   </div>
-  <div *ngFor="let layer of roadmap?.layers">
+  <div *ngFor="let layer of roadmap?.layers" style="max-width: 1000px; width: 100%;">
     <div class="step" *ngFor="let item of layer.steps">
       <h2>{{item.title}}</h2>
-      <div class="flex">
+      <div class="flex align-items-center">
         <div class="layer bg-primary">
           {{layer.id}}
           <fa-icon [icon]="faLayerGroup" [size]=size>
@@ -20,17 +20,11 @@
           <fa-icon [icon]="faFeatherPointed" [size]=size>
           </fa-icon>
         </div>
-        <div class="layer bg-primary">
+        <div class="layer bg-primary mr-1">
           {{item.bountyCoin}}
           <fa-icon [icon]="faCoins" [size]=size>
           </fa-icon>
         </div>
-      </div>
-      <div>
-        <button pButton pRipple type="button" icon=faPlus class="p-button-rounded btn m-1">
-          <fa-icon [icon]="faPlus" [size]=size>
-          </fa-icon>
-        </button>
         <button pButton pRipple type="button" icon=faPencil class="p-button-rounded p-button-success btn m-1">
           <fa-icon [icon]="faPencil" [size]=size>
           </fa-icon>

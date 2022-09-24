@@ -1,0 +1,40 @@
+<form
+  [formGroup]="challengerForm"
+  (ngSubmit)="register()"
+  class="flex justify-content-center align-items-center flex-column">
+
+  <span class="p-float-label p-fluid mb-2 mt-2 w-full">
+    <input type="text" id="inputtext" formControlName="title" pInputText>
+    <label for="inputtext">Nome do desafio</label>
+  </span>
+
+  <span class="mb-2">Recompensas</span>
+
+  <span class="p-float-label p-fluid mb-2 w-full">
+    <input type="text" id="inputtext" formControlName="points" pInputText>
+    <label for="inputtext">Pontos</label>
+  </span>
+
+  <span class="p-float-label p-fluid mb-2 w-full">
+    <input type="text" id="inputtext" formControlName="bountyXp" pInputText>
+    <label for="inputtext">Experiencia</label>
+  </span>
+
+  <span class="p-float-label p-fluid mb-2 w-full">
+    <input type="text" id="inputtext" formControlName="bountyCoin" pInputText>
+    <label for="inputtext">Dinheiro</label>
+  </span>
+
+  <span class="mb-2">Desafio</span>
+
+  <span class="p-float-label p-fluid mb-2 w-full">
+    <textarea pInputTextarea [autoResize]="true" formControlName="question"></textarea>
+    <label for="inputtext">Questão</label>
+  </span>
+
+  <span class="p-float-label p-fluid mb-2 w-full">
+    <textarea pInputTextarea [autoResize]="true" formControlName="result"></textarea>
+    <label for="inputtext">Resposta</label>
+  </span>
+  <p-button label="Cadastrar" type="submit"></p-button>
+</form>

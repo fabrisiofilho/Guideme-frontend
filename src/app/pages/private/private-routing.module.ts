@@ -15,7 +15,8 @@ import { StoreComponent } from './store/store.component';
 const routes: Routes = [
   {
     path:'',
-    component: HomeComponent
+    component: HomeComponent,
+    canActivate: [RouterGuardAluno]
   },
   {
     path:'roadmap',

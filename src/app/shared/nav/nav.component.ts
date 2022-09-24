@@ -62,8 +62,12 @@ export class NavComponent implements OnInit {
               }
 
   ngOnInit(): void {
-    this.items = [
-      {label: 'Perfil', icon: 'pi pi-fw pi-user', command: ()=>{ this.openProfile() }},
+    this.items = this.profile == 'ALUNO' ? [
+      {label: 'Inventario', icon: 'pi pi-fw pi-database', command: ()=>{ this.openProfile() }},
+      {label: 'Configurações', icon: 'pi pi-fw pi-cog', command: ()=>{ this.openConfig() }},
+      {separator: true},
+      {label: 'Sair', icon: 'pi pi-fw pi-sign-out', command: ()=>{ this.authService.logout() }}
+    ] : [
       {label: 'Configurações', icon: 'pi pi-fw pi-cog', command: ()=>{ this.openConfig() }},
       {separator: true},
       {label: 'Sair', icon: 'pi pi-fw pi-sign-out', command: ()=>{ this.authService.logout() }}

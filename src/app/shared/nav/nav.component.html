@@ -6,7 +6,7 @@
     <button pButton pRipple type="button" icon="pi" (click)="openSide = true" class="p-button-rounded p-button-text mr-4">
       <fa-icon [icon]="faBars" [size]=size></fa-icon>
     </button>
-    <div class="grid justify-content-evenly align-items-center placar p-1">
+    <div class="grid justify-content-evenly align-items-center placar p-1" *ngIf="this.user?.profile == 'ALUNO'">
       <div class="m-2">
         <fa-icon [icon]="faCoins" [size]=sizeSm style="color: #8F00FF;">
         </fa-icon>

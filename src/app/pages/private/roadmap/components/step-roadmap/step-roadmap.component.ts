@@ -25,4 +25,8 @@ export class StepRoadmapComponent implements OnInit {
     return this.sanitizer.bypassSecurityTrustResourceUrl(url);
   }
 
+  openWindow(url:string) {
+    window.open(url);
+  }
+
 }

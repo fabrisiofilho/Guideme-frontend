@@ -1,0 +1,37 @@
+<form
+  [formGroup]="itemsForm"
+  (ngSubmit)="register()"
+  class="flex justify-content-center align-items-center flex-column">
+
+  <span class="p-float-label p-fluid mb-2 mt-2 w-full">
+    <input type="text" id="inputtext" formControlName="title" pInputText>
+    <label for="inputtext">Nome do item</label>
+  </span>
+
+  <span class="p-float-label p-fluid mb-2 w-full">
+    <input type="text" id="inputtext" formControlName="price" pInputText>
+    <label for="inputtext">Preço</label>
+  </span>
+
+  <span class="p-float-label p-fluid mb-2 w-full">
+    <input type="text" id="inputtext" formControlName="value" pInputText>
+    <label for="inputtext">Quantidade de uso</label>
+  </span>
+
+  <span class="mb-2">Categoria</span>
+  <div class="flex mt-2">
+    <div class="field-radiobutton mr-2">
+      <p-radioButton name="category" value="CHANCE" formControlName="category" inputId="category1"></p-radioButton>
+      <label for="category1">Chance</label>
+    </div>
+    <div class="field-radiobutton mr-2">
+        <p-radioButton name="category" value="REPEAT" formControlName="category" inputId="category2"></p-radioButton>
+        <label for="category2">Repeat</label>
+    </div>
+    <div class="field-radiobutton mr-2">
+        <p-radioButton name="category" value="BONUS" formControlName="category"  inputId="category3"></p-radioButton>
+        <label for="category3">Bonus</label>
+    </div>
+  </div>
+  <p-button label="Cadastrar" type="submit"></p-button>
+</form>

@@ -14,7 +14,7 @@ export class RouterGuardAluno implements CanActivate {
 
   async checkAccess(route: ActivatedRouteSnapshot, routerState: RouterStateSnapshot): Promise<boolean> {
     if (localStorage.getItem("profile") !== "ALUNO") {
-      this.router.navigate(['']);
+      this.router.navigate(['roadmap/admin']);
     }
     return true;
   }

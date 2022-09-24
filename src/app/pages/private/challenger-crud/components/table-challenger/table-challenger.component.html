@@ -1,0 +1,29 @@
+
+<div class="w-full flex align-items-end justify-content-end mb-3">
+  <button pButton pRipple label="Adicionar novo desafio" icon="pi pi-plus-circle" (click)="openForm()"></button>
+</div>
+<p-table [value]="challengers" [paginator]="true" [rows]="7">
+  <ng-template pTemplate="header">
+      <tr>
+        <th class="text-center">ID</th>
+        <th class="text-center">Nome</th>
+        <th class="text-center">Desafio</th>
+        <th class="text-center">Recompensa em Coin</th>
+        <th class="text-center">Recompensa em XP</th>
+        <th></th>
+      </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-challenger>
+      <tr>
+        <td class="text-center">{{challenger.id}}</td>
+        <td class="text-center">{{challenger.title}}</td>
+        <td class="text-center">{{challenger.question}}</td>
+        <td class="text-center">{{challenger.bountyCoin}}</td>
+        <td class="text-center">{{challenger.bountyXp}}</td>
+        <td class="flex justify-content-center">
+          <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded mr-2" (click)="editChallenger(challenger)"></button>
+          <button pButton pRipple icon="pi pi-trash" class="p-button-rounded" (click)="removerChallenger(challenger.id)"></button>
+        </td>
+      </tr>
+  </ng-template>
+</p-table>
