@@ -3,7 +3,7 @@
 </div>
 <p-overlayPanel #op>
   <ng-template pTemplate>
-      <div *ngIf="notifications?.length == 0">
+      <div *ngIf="notifications?.length == 0 || !notifications">
         Você não tem nenhuma notificação
       </div>
       <div *ngIf="notifications?.length || 0 > 0">
