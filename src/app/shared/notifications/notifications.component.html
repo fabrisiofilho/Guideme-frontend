@@ -1,12 +1,12 @@
 <div class="btn-bell flex justify-content-center align-items-center mr-3" (click)="op.toggle($event)">
-  <i class="pi pi-bell p-text-secondary" pBadge style="font-size: 20px; color: white;" [value]=notifications.length.toString() ></i>
+  <i class="pi pi-bell p-text-secondary" pBadge style="font-size: 20px; color: white;" [value]="notifications?.length?.toString() || '0'" ></i>
 </div>
 <p-overlayPanel #op>
   <ng-template pTemplate>
-      <div *ngIf="notifications.length == 0">
+      <div *ngIf="notifications?.length == 0">
         Você não tem nenhuma notificação
       </div>
-      <div *ngIf="notifications.length > 0">
+      <div *ngIf="notifications?.length || 0 > 0">
         <div *ngFor="let notification of notifications; let i = index" class="flex align-items-center justify-content-center notifications p-3" [class.mt-2]="validIndex(i)">
           <div class="flex">
             <div class="flex justify-content-center align-items-center mr-2">
@@ -14,11 +14,8 @@
               </fa-icon>
             </div>
             <div class="flex flex-column">
-              <div style="font-weight: bold;">
-                {{notification.type}}
-              </div>
               <div>
-                {{notification.title}}
+                {{notification.content}}
               </div>
             </div>
           </div>

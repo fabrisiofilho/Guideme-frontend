@@ -4,6 +4,7 @@
     <div class="body-content">
       <div class="content">
         <system-roadmap *ngIf="!loading" [roadmap]="roadmap!"></system-roadmap>
+        <span class="col flex justify-content-center" *ngIf="roadmap == null" style="color: gray;">Nenhum roadmap cadastrado</span>
       </div>
     </div>
 </div>

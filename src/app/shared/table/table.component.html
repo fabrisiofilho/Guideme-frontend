@@ -1,3 +1,4 @@
 <div class="flex flex-wrap justify-content-center">
-  <guideme-card class="col-fixed" *ngFor="let item of itens" [item]="item"[buttonText]="buttonText" [icon]="icon"></guideme-card>
+  <guideme-card class="col-fixed" *ngFor="let item of itens" [item]="item"[buttonText]="buttonText" [icon]="icon" (clickButton)="tableClick.emit($event)"></guideme-card>
+  <span class="col flex justify-content-center" *ngIf="itens.length === 0" style="color: gray;">Não há nenhum item registrado</span>
 </div>

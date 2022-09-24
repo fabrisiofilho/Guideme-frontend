@@ -4,13 +4,14 @@
     <div class="body-content">
       <div class="flex flex-wrap justify-content-center w-full">
         <div class="w-full grid justify-content-center">
-          <div class="flex flex-column col-12" style="height: 440px;">
+          <div class="flex flex-column col-12" style="max-height: 440px;">
             <h3 class="flex justify-content-end">Ultimos desafios adicionados</h3>
             <div class="grid overflow-hidden">
               <guideme-card class="col flex justify-content-center" *ngFor="let item of item" [item]="item" [buttonText]="text" [icon]="faFeatherPointed"></guideme-card>
+              <span class="col flex justify-content-center" style="color: gray;" *ngIf="item.length === 0">Não foi registrado nenhum desafio</span>
             </div>
           </div>
-          <div class="flex flex-column col-12" style="height: 440px;">
+          <div class="flex flex-column col-12" style="max-height: 100%;">
             <app-ranking></app-ranking>
           </div>
         </div>

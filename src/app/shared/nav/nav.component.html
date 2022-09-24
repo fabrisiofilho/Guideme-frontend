@@ -10,18 +10,18 @@
       <div class="m-2">
         <fa-icon [icon]="faCoins" [size]=sizeSm style="color: #8F00FF;">
         </fa-icon>
-        <span class="ml-2 font-bold">{{this.user?.coins}}</span>
+        <span class="ml-2 font-bold">{{this.user?.coins || 0}}</span>
       </div>
       <div class="m-2">
         <fa-icon [icon]="faFeatherPointed" [size]=sizeSm style="color: #8F00FF;">
         </fa-icon>
-        <span class="ml-2 font-bold">{{this.user?.points}}</span>
+        <span class="ml-2 font-bold">{{this.user?.points|| 0}}</span>
       </div>
     </div>
   </div>
 
   <div class="col-6 flex justify-content-end">
-    <notifications></notifications>
+    <notifications [notifications]="this.user?.notifications"></notifications>
     <div class="flex justify-content-between align-items-center perfil p-0" (click)="menu.toggle($event)">
       <div style="color: rgb(255, 255, 255); font-weight: 500;" class="p-4 text-center">{{name()}}</div>
       <img src={{photo()}} alt="" style="width: 40px;height: 40px; object-fit: cover; border-radius: 50%;">

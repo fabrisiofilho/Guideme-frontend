@@ -46,4 +46,8 @@ export class ChallengerComponent implements OnInit {
     }
   }
 
+  realizarDesafio() {
+
+  }
+
 }

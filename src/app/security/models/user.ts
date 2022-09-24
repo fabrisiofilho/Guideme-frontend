@@ -1,3 +1,6 @@
+import { Inventory } from "src/app/models/inventory";
+import { Notifications } from "src/app/models/notifications";
+
 export interface User {
   id: number;
   name: string;
@@ -6,6 +9,8 @@ export interface User {
   profile: string;
   password: string;
   urlPhoto: string;
+  inventory: Inventory;
+  notifications: Notifications[];
   coins: number;
   points: number;
   exps: number;

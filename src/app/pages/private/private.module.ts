@@ -45,6 +45,7 @@ import { OverlayPanelModule } from 'primeng/overlaypanel';
 import { BadgeModule } from 'primeng/badge';
 import { RankingComponent } from 'src/app/shared/ranking/ranking.component';
 import { TotalRankingComponent } from 'src/app/shared/total-ranking/total-ranking.component';
+import { TableModule } from 'primeng/table';
 
 @NgModule({
   declarations: [
@@ -92,7 +93,8 @@ import { TotalRankingComponent } from 'src/app/shared/total-ranking/total-rankin
     ProgressSpinnerModule,
     SidebarModule,
     OverlayPanelModule,
-    BadgeModule
+    BadgeModule,
+    TableModule
   ],
   providers: [RouterGuardAdmin, RouterGuardAluno]
 })

@@ -7,7 +7,7 @@
       <fa-icon [icon]="icon" [size]=size style="color: gray;" class="ml-2">
       </fa-icon>
     </div>
-    <p-button label={{buttonText}} class="absolute bottom-0 p-fluid m-2" styleClass="p-button">
+    <p-button label={{buttonText}} (click)="clickButton.emit(item.id)" class="absolute bottom-0 p-fluid m-2" styleClass="p-button">
     </p-button>
   </div>
   <div class="card-icon">

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { SizeProp } from '@fortawesome/fontawesome-svg-core';
 
 @Component({
@@ -16,6 +16,9 @@ export class TableComponent implements OnInit {
 
   @Input()
   buttonText?: string;
+
+  @Output()
+  tableClick = new EventEmitter<string>();
 
   size: SizeProp = "sm";
 

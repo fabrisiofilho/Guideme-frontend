@@ -1,4 +1,4 @@
-import { Component, ElementRef, HostListener, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { Component, ElementRef, HostListener, Input, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { SizeProp } from '@fortawesome/fontawesome-svg-core';
 import { faBell, faEnvelope, faXmark } from '@fortawesome/free-solid-svg-icons';
 import { MenuItem } from 'primeng/api';
@@ -20,24 +20,13 @@ export class NotificationsComponent implements OnInit {
 
   isMenuOpen = false;
 
-  notifications: Notifications[] = [];
+  @Input()
+  notifications?: Notifications[];
 
   constructor() {
   }
 
   ngOnInit(): void {
-    const nots: Notifications = {
-      id: 1,
-      title: 'Novo desafio adicionado 1',
-      type: 'Desafios'
-    }
-    const nots2: Notifications = {
-      id: 2,
-      title: 'Novo desafio adicionado 2',
-      type: 'Desafios'
-    }
-    this.notifications.push(nots)
-    this.notifications.push(nots2)
   }
 
   validIndex(i: number) {
@@ -45,8 +34,7 @@ export class NotificationsComponent implements OnInit {
   }
 
   closeNoteficaiton(notefication: Notifications) {
-    this.notifications.splice(this.notifications.indexOf(notefication), 1);
-    console.log(this.notifications);
+    this.notifications?.splice(this.notifications.indexOf(notefication), 1);
   }
 
 }

@@ -3,7 +3,7 @@
     <guideme-nav class="sticky z-5 w-full" style="top:32px;"></guideme-nav>
     <div class="body-content flex-column">
       <search class="w-full" (search)="buscarItens($event)" [title]="vendinha" [value]="value"></search>
-      <app-table [itens]="item" [icon]="faCoins" [buttonText]="text"></app-table>
+      <app-table [itens]="item" [icon]="faCoins" [buttonText]="text" (tableClick)="comprarItem($event)"></app-table>
     </div>
   </div>
 </div>

@@ -36,6 +36,10 @@ export class StoreService {
   }
 
   delete(id: string) {
-    return this.http.delete<String>(this.URL + this.PATH + "/" + id);
+    return this.http.delete<void>(this.URL + this.PATH + "/" + id);
+  }
+
+  buyItem(id: string) {
+    return this.http.post<void>(this.URL + "/store" + "/buy/" + id, null);
   }
 }
