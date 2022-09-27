@@ -4,8 +4,8 @@
       {{step.title}}
     </h3>
     <h4 class="m-0 flex justify-content-between">
-      <p class="m-0">Conclusão</p>
-      <p class="m-0">0%</p>
+      <p class="m-1">Conclusão</p>
+      <p class="m-1">0%</p>
     </h4>
     <p-progressBar [value]="step.conclusion" class="w-full"></p-progressBar>
     <div class="placar mt-4">
@@ -33,8 +33,14 @@
 </div>
 
 <div *ngIf="!step.isOpen && step.isDone"(mouseover)="effectCardConcluded()" class="card card-open title-background">
-  <div class="flex justify-content-center align-items-center w-full h-full card-opa">
-    <fa-icon [icon]="faCircleCheck" [size]=size2 style="color: rgb(0, 255, 166);">
-    </fa-icon>
+  <div class="flex justify-content-center align-items-center w-full h-full card-opa flex-column">
+    <h3 class="mb-3">
+      {{step.title}}
+    </h3>
+    <div class="flex flex-column justify-content-center align-items-center">
+      <fa-icon [icon]="faCircleCheck" [size]=size2 style="color: rgb(0, 255, 166);" class="mb-2">
+      </fa-icon>
+      Concluido
+    </div>
   </div>
 </div>

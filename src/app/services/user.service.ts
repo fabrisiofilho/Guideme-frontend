@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
+import { Notifications } from '../models/notifications';
 import { User } from '../security/models/user';
 
 @Injectable({
@@ -31,6 +32,14 @@ export class UserService {
 
   updateUser(id: any, password: any, email: any, name: any) {
     return this.http.put<User>(this.URL + "/user/updateUser", {id, password, email, name});
+  }
+
+  getNotification() {
+    return this.http.get<Notifications[]>(this.URL + "/user/notification");
+  }
+
+  setReadNotification(id: number) {
+    return this.http.post<void>(this.URL + "/user/notification/"+ id, null);
   }
 
 }

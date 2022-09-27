@@ -3,6 +3,7 @@ import { SizeProp } from '@fortawesome/fontawesome-svg-core';
 import { faBell, faEnvelope, faXmark } from '@fortawesome/free-solid-svg-icons';
 import { MenuItem } from 'primeng/api';
 import { Notifications } from 'src/app/models/notifications';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'notifications',
@@ -20,10 +21,10 @@ export class NotificationsComponent implements OnInit {
 
   isMenuOpen = false;
 
-  @Input()
   notifications?: Notifications[];
 
-  constructor() {
+  constructor(private userService: UserService) {
+    this.findNotification();
   }
 
   ngOnInit(): void {
@@ -35,6 +36,16 @@ export class NotificationsComponent implements OnInit {
 
   closeNoteficaiton(notefication: Notifications) {
     this.notifications?.splice(this.notifications.indexOf(notefication), 1);
+    this.userService.setReadNotification(notefication.id).subscribe(it => {
+
+    });
+  }
+
+
+  findNotification() {
+    this.userService.getNotification().subscribe(it => {
+      this.notifications = it
+    })
   }
 
 }

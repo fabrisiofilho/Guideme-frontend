@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DynamicDialogConfig, DynamicDialogRef } from 'primeng/dynamicdialog';
-import { Challenger } from 'src/app/models/challenger';
 import { ChallengerService } from 'src/app/services/challenger.service';
 import { ToastMessageService } from 'src/app/services/toast-message.service';
 
