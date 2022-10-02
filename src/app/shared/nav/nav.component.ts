@@ -79,24 +79,32 @@ export class NavComponent implements OnInit {
   }
 
   photo() {
-    return localStorage.getItem("photo");
+    return this.user?.urlPhoto;
   }
 
   name() {
-    return localStorage.getItem("user");
+    return this.user?.name;
   }
 
   openProfile() {
     const ref = this.dialogService.open(ProfileComponent, {
         header: 'Perfil',
-        width: '70%'
+        width: '70%',
+        height: '90%'
     });
   }
 
   openConfig() {
     const ref = this.dialogService.open(ConfigComponent, {
         header: 'Configurações',
-        width: '70%'
+        width: '70%',
+        height: '90%'
+    });
+
+    ref.onClose.subscribe((user: User) => {
+      if (user) {
+          this.user = user;
+      }
     });
   }
 

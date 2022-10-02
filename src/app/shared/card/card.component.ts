@@ -18,7 +18,7 @@ export class CardComponent implements OnInit {
   buttonText?: string;
 
   @Output()
-  clickButton = new EventEmitter<string>();
+  clickButton = new EventEmitter<any>();
 
   size: SizeProp = "sm";
 

@@ -8,6 +8,7 @@ import { ChallengerCrudComponent } from './challenger-crud/challenger-crud.compo
 import { ChallengerComponent } from './challenger/challenger.component';
 import { HomeComponent } from './home/home.component';
 import { RoadmapCrudComponent } from './roadmap-crud/roadmap-crud.component';
+import { RoadmapValidateComponent } from './roadmap-validate/roadmap-validate.component';
 import { RoadmapComponent } from './roadmap/roadmap.component';
 import { StoreCrudComponent } from './store-crud/store-crud.component';
 import { StoreComponent } from './store/store.component';
@@ -21,6 +22,11 @@ const routes: Routes = [
   {
     path:'roadmap',
     component: RoadmapComponent,
+    canActivate: [RouterGuardAluno]
+  },
+  {
+    path:'roadmap/validate',
+    component: RoadmapValidateComponent,
     canActivate: [RouterGuardAluno]
   },
   {

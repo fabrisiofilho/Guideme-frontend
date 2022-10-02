@@ -1,20 +1,33 @@
 <div class="flex p-5">
   <div class="w-full">
     <guideme-nav class="sticky z-5 w-full" style="top:32px;"></guideme-nav>
-    <div class="body-content">
-      <div class="flex flex-wrap justify-content-center w-full">
-        <div class="w-full grid justify-content-center">
-          <div class="flex flex-column col-12" style="max-height: 440px;">
-            <h3 class="flex justify-content-end">Ultimos desafios adicionados</h3>
-            <div class="grid overflow-hidden">
-              <guideme-card class="col flex justify-content-center" *ngFor="let item of item" [item]="item" [buttonText]="text" [icon]="faFeatherPointed"></guideme-card>
+    <div class="body-content background-star">
+      <div class="w-full">
+        <div class="flex flex-column justify-content-center align-items-center">
+          <div class="font-bold" style="font-size: 70px;">
+            <strong>GUIDEME</strong><i style="color: #7825B9;">.js</i>
+          </div>
+          <h1>Seja bem vindo, {{this.usuario}}!</h1>
+          <p style="color: gray; font-size: 20px;">Inicie sua carreira aqui, aprendendo do básico de uma forma descontraída e divertida.</p>
+          <button pButton pRipple type="button" label="Vamos lá aprender" class="p-button-rounded" (click)="irAoRoadmap()"></button>
+        </div>
+        <div class="grid justify-content-center align-items-center mt-5">
+          <app-little-card class="mx-2 col-fixed" [icon]="faGamepad" [text]="'Aprenda de maneira gameficada.'"></app-little-card>
+          <app-little-card class="mx-2 col-fixed" [icon]="faCompass" [text]="'Seja competitivo e alcance suas pontuações.'"></app-little-card>
+          <app-little-card class="mx-2 col-fixed" [icon]="faRankingStar" [text]="'Percorá o caminho do aprendizado.'"></app-little-card>
+          <app-little-card class="mx-2 col-fixed" [icon]="faJs" [text]="'Aprenda JS!'"></app-little-card>
+        </div>
+        <div class="w-full grid justify-content-center mt-3" #content>
+          <div class="flex flex-column col-12 justify-content-center" style="max-height: 440px; max-width: 1150px;">
+            <h3 class="flex justify-content-center">Ultimos desafios adicionados</h3>
+            <div class="grid overflow-hidden justify-content-center">
+              <guideme-card class="col-fixed flex justify-content-center" *ngFor="let item of item" [item]="item" [buttonText]="text" [icon]="faFeatherPointed"></guideme-card>
               <span class="col flex justify-content-center" style="color: gray;" *ngIf="item.length === 0">Não foi registrado nenhum desafio</span>
             </div>
           </div>
-          <div class="flex flex-column col-12" style="max-height: 100%;">
-            <app-ranking></app-ranking>
-          </div>
-        </div>
+      </div>
+      <div class="flex flex-column justify-content-center align-items-center mt-3">
+        <app-ranking></app-ranking>
       </div>
     </div>
   </div>

@@ -4,7 +4,7 @@
     <p (click)="openTotalRanking()" style="text-decoration: underline; cursor: pointer; color: #8F00FF; font-weight: bold;">Ver mais</p>
   </div>
   <div class="flex justify-content-between align-content-center flex-column" style="height: 100%;" *ngFor="let user of users; let i = index">
-    <div class="card-user flex justify-content-between align-items-center p-4 mt-3">
+    <div class="card-user flex justify-content-between align-items-center p-4 mt-3" [ngClass]="user.id == this.userIn?.id ? 'card-user-select': ''">
       <div><img src={{user.urlPhoto}} alt="" style="width: 40px;height: 40px; object-fit: cover; border-radius: 50%;"></div>
       <div style="width: 250px;">{{user.name}}</div>
       <div>

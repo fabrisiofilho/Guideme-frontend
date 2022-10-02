@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SizeProp } from '@fortawesome/fontawesome-svg-core';
 import { faFeatherPointed } from '@fortawesome/free-solid-svg-icons';
+import { DynamicDialogConfig, DynamicDialogRef } from 'primeng/dynamicdialog';
 import { User } from 'src/app/security/models/user';
 import { RankingService } from 'src/app/services/ranking.service';
 
@@ -15,12 +16,20 @@ export class TotalRankingComponent implements OnInit {
   sizeSm: SizeProp = "sm";
   users: User[] = [];
 
-  constructor(private rankingService: RankingService) { }
+  userIn: User;
+
+  constructor(private rankingService: RankingService,
+              public ref: DynamicDialogRef,
+              public config: DynamicDialogConfig) {
+                this.userIn = config.data.userIn;
+              }
 
   ngOnInit(): void {
     this.rankingService.get().subscribe(it => {
       this.users = it;
     });
   }
+
+
 
 }

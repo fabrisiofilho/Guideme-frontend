@@ -13,34 +13,34 @@
                     <div class="field">
                       <span class="p-float-label">
                         <input id="name" type="text" formControlName="name" pInputText>
-                        <label for="name">Nome</label>
+                        <label for="name">Nome *</label>
                       </span>
                     </div>
                     <div class="field">
                       <span class="p-float-label">
                         <input id="username" type="text" formControlName="username" pInputText>
-                        <label for="username">Apelido</label>
+                        <label for="username">Apelido *</label>
                       </span>
                     </div>
                     <div class="field">
                       <span class="p-float-label">
                         <input id="email" type="text" formControlName="email" pInputText>
-                        <label for="email">E-mail</label>
+                        <label for="email">E-mail *</label>
                       </span>
                     </div>
                     <div class="field">
                       <span class="p-float-label">
                         <input id="password" type="password" formControlName="password" pInputText>
-                        <label for="password">Senha</label>
+                        <label for="password">Senha *</label>
                       </span>
                     </div>
                     <div class="field">
                       <span class="p-float-label">
                         <input id="confirmPassword" type="password" formControlName="confirmPassword" pInputText>
-                        <label for="confirmPassword">Confirmação de senha</label>
+                        <label for="confirmPassword">Confirmação de senha *</label>
                       </span>
                     </div>
-                    <p-button label="Cadastrar" type="submit"></p-button>
+                    <p-button label="Cadastrar" type="submit" [disabled]="!registerForm.valid"></p-button>
                   </div>
             </div>
             <div class="">

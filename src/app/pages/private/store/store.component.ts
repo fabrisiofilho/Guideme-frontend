@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 import { SizeProp } from '@fortawesome/fontawesome-svg-core';
 import { faCoins } from '@fortawesome/free-solid-svg-icons';
 import { MessageService } from 'primeng/api';
@@ -7,6 +7,7 @@ import { Pageable } from 'src/app/models/pageable';
 import { StoreService } from 'src/app/services/store.service';
 import { ToastMessageService } from 'src/app/services/toast-message.service';
 import { UserService } from 'src/app/services/user.service';
+import { NavComponent } from 'src/app/shared/nav/nav.component';
 
 @Component({
   selector: 'app-store',
@@ -24,6 +25,8 @@ export class StoreComponent implements OnInit {
   value!: number;
 
   text: string = "Comprar";
+
+  @ViewChild('nav') navElement: NavComponent | undefined;
 
   constructor(private storeService: StoreService,
               private userService: UserService,
@@ -50,10 +53,11 @@ export class StoreComponent implements OnInit {
     }
   }
 
-  comprarItem(id: string) {
-    this.storeService.buyItem(id).subscribe({
+  comprarItem(item: any) {
+    this.storeService.buyItem(item.id).subscribe({
       next: it => {
         this.buscarItens("");
+        this.navElement?.findPointsAndCoins();
       },
       error: e => {
         console.log(e);

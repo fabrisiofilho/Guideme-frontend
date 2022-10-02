@@ -4310,7 +4310,7 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
 .p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link {
   background: transparent;
   border-color: rgba(255, 255, 255, 0.12);
-  color: #7825B9;
+  color: white;
 }
 .p-tabview .p-tabview-left-icon {
   margin-right: 0.5rem;
@@ -4468,8 +4468,6 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
 }
 
 .p-overlaypanel {
-  left: unset !important;
-  right: 260px !important;
   background: linear-gradient(93.19deg, rgba(255, 255, 255, 0.114) -1.56%, rgba(255, 255, 255, 0.057) 103.9%);
   backdrop-filter: blur(20px);
   border-radius: 20px;

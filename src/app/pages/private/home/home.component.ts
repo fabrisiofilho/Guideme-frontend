@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { faFeatherPointed } from '@fortawesome/free-solid-svg-icons';
+import { Router } from '@angular/router';
+import { faAlignJustify, faCompass, faFeatherPointed, faGamepad, faGraduationCap, faRankingStar, faSquarePen } from '@fortawesome/free-solid-svg-icons';
 import { Challenger } from 'src/app/models/challenger';
 import { Pageable } from 'src/app/models/pageable';
 import { ChallengerService } from 'src/app/services/challenger.service';
@@ -17,11 +18,20 @@ export class HomeComponent implements OnInit {
 
   item: Challenger[] = [];
 
+  faGamepad = faGamepad;
+
+  faCompass = faCompass;
+
+  faJs = faGraduationCap;
+
+  faRankingStar = faRankingStar;
+
   faFeatherPointed = faFeatherPointed;
 
   text: string = "Realizar";
 
-  constructor(private challengerService: ChallengerService) { }
+  constructor(private challengerService: ChallengerService,
+              private router: Router) { }
 
   ngOnInit(): void {
     this.usuario = localStorage.getItem("user");
@@ -33,6 +43,10 @@ export class HomeComponent implements OnInit {
       this.itens = it;
       this.item = it.content
     });
+  }
+
+  irAoRoadmap() {
+    this.router.navigate(['/roadmap']);
   }
 
 }

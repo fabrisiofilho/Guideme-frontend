@@ -10,6 +10,7 @@ import { ToastMessageService } from '../services/toast-message.service';
 import { Credential } from './models/credential';
 import { Login } from './models/login';
 import { RefreshToken } from './models/refresh-token';
+import { User } from './models/user';
 
 
 @Injectable({
@@ -55,9 +56,14 @@ export class AuthService {
   }
 
   register(register: Register) {
-    this.http.post(this.URL + "/login", register).subscribe(it => {
-      this.messageService.addSingle("success", "Sucesso", "Cadastro efeturado");
-      this.router.navigate(['']);
+    this.http.post<User>(this.URL + "/auth/register", register).subscribe({
+      next: it => {
+        this.messageService.addSingle("success", "Sucesso", "Cadastro efetuado");
+        this.router.navigate(['']);
+      },
+      error: e => {
+        this.messageService.addSingle("error", "Erro", "Não foi possivel cadastrar sua conta, tente novamente respeitando o solicitado.");
+      }
     })
   }
 
@@ -95,4 +101,18 @@ export class AuthService {
     return decodedToken?.exp <= new Date().getTime() / 1000;
   }
 
+  forgotPassword(email: string) {
+    return this.http.post<string>(this.URL + '/auth/forgotPassword', email);
+  }
+
+  resetPassword(recover: Recover) {
+    return this.http.post<string>(this.URL + '/auth/resetPassword', recover);
+  }
+
+}
+
+interface Recover {
+  email: string;
+  password: string;
+  token: string;
 }

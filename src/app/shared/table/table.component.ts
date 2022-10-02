@@ -18,7 +18,7 @@ export class TableComponent implements OnInit {
   buttonText?: string;
 
   @Output()
-  tableClick = new EventEmitter<string>();
+  tableClick = new EventEmitter<any>();
 
   size: SizeProp = "sm";
 

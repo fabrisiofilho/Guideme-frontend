@@ -4,6 +4,7 @@ import { faFeatherPointed } from '@fortawesome/free-solid-svg-icons';
 import { DialogService } from 'primeng/dynamicdialog';
 import { User } from 'src/app/security/models/user';
 import { RankingService } from 'src/app/services/ranking.service';
+import { UserService } from 'src/app/services/user.service';
 import { TotalRankingComponent } from '../total-ranking/total-ranking.component';
 
 @Component({
@@ -16,14 +17,27 @@ export class RankingComponent implements OnInit {
   faFeatherPointed = faFeatherPointed;
   sizeSm: SizeProp = "sm";
   users: User[] = [];
+  userIn?: User;
 
   constructor(public dialogService: DialogService,
-              private rankingService: RankingService) { }
+              private rankingService: RankingService,
+              private userService: UserService) {
+                this.getUser();
+              }
 
   ngOnInit(): void {
     this.rankingService.get().subscribe(it => {
       this.users = it;
     });
+  }
+
+  getUser(){
+    const email = localStorage.getItem("user_email");
+    if (email) {
+      this.userService.findUserByEmail(email).subscribe(it => {
+        this.userIn = it;
+      });
+    }
   }
 
   photo() {
@@ -32,6 +46,9 @@ export class RankingComponent implements OnInit {
 
   openTotalRanking() {
     const ref = this.dialogService.open(TotalRankingComponent, {
+      data: {
+        userIn: this.userIn
+      },
       header: 'Ranking',
       width: '500px'
     });

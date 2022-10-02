@@ -22,13 +22,11 @@ import {ProgressBarModule} from 'primeng/progressbar';
 import {FileUploadModule} from 'primeng/fileupload';
 import {ProgressSpinnerModule} from 'primeng/progressspinner';
 import {OverlayPanelModule} from 'primeng/overlaypanel';
-import { ValidationsComponent } from './shared/validations/validations.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    ValidationsComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,

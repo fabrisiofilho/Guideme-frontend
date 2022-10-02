@@ -25,14 +25,4 @@ export class CardRoadmapComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  effectCardOpen() {
-  }
-
-  effectCardClose() {
-
-  }
-
-  effectCardConcluded() {
-  }
-
 }

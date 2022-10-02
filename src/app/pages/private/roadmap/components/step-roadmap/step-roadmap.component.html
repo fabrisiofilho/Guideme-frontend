@@ -11,5 +11,5 @@
       <button pButton pRipple type="button" label="Introdution" class="p-button-rounded p-button-success" (click)="openWindow(item.linkTree)"></button>
     </div>
   </div>
-  <p-button class="mt-5" label="Realizar validação de modulo" [disabled]="step.isDone"></p-button>
+  <p-button *ngIf="!step.isDone" class="mt-5" label="Realizar validação de modulo" [disabled]="step.isDone"></p-button>
 </div>

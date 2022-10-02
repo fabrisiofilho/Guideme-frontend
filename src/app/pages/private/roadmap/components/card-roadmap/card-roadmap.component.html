@@ -1,4 +1,4 @@
-<div *ngIf="step.isOpen && !step.isDone" (mouseover)="effectCardOpen()" class="card card-open title-background relative">
+<div *ngIf="step.isOpen && !step.isDone" class="card card-open title-background relative">
   <div class="card-content">
     <h3 class="text-center">
       {{step.title}}
@@ -25,14 +25,14 @@
   </div>
 </div>
 
-<div *ngIf="!step.isOpen && !step.isDone" (mouseover)="effectCardClose()" class="card title-background">
+<div *ngIf="!step.isOpen && !step.isDone" class="card title-background">
   <div class="flex justify-content-center align-items-center w-full h-full card-opa">
     <fa-icon [icon]="faLock" [size]=size2>
     </fa-icon>
   </div>
 </div>
 
-<div *ngIf="!step.isOpen && step.isDone"(mouseover)="effectCardConcluded()" class="card card-open title-background">
+<div *ngIf="!step.isOpen && step.isDone" class="card card-open title-background">
   <div class="flex justify-content-center align-items-center w-full h-full card-opa flex-column">
     <h3 class="mb-3">
       {{step.title}}

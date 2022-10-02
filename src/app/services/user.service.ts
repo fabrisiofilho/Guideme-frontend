@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
+import { Challenger } from '../models/challenger';
 import { Notifications } from '../models/notifications';
 import { User } from '../security/models/user';
 
@@ -15,6 +16,10 @@ export class UserService {
 
   findUserByEmail(email: string){
     return this.http.get<User>(this.URL + "/user/email/" + email);
+  }
+
+  findChallengerByUser(){
+    return this.http.get<Challenger[]>(this.URL + "/challenger/findChallengerByUser");
   }
 
   uploadLogo(file: File) {
@@ -41,5 +46,7 @@ export class UserService {
   setReadNotification(id: number) {
     return this.http.post<void>(this.URL + "/user/notification/"+ id, null);
   }
+
+  
 
 }

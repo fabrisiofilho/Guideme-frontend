@@ -1,4 +1,5 @@
 import { HttpClient } from '@angular/common/http';
+import { identifierName } from '@angular/compiler';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { Challenger } from '../models/challenger';
@@ -38,4 +39,13 @@ export class ChallengerService {
     return this.http.delete<String>(this.URL + this.PATH + "/" + id);
   }
 
+  validation(validation: validation) {
+    return this.http.post<void>(this.URL + this.PATH + "/validated", validation);
+  }
+
+}
+
+interface validation {
+  id: number,
+  response: string
 }

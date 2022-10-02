@@ -54,6 +54,10 @@ import { AddRoadmapComponent } from './roadmap-crud/components/add-roadmap/add-r
 import {RadioButtonModule} from 'primeng/radiobutton';
 import {InputTextareaModule} from 'primeng/inputtextarea';
 import {PaginatorModule} from 'primeng/paginator';
+import {TabViewModule} from 'primeng/tabview';
+import { ValidationsComponent } from 'src/app/shared/validations/validations.component';
+import { LittleCardComponent } from 'src/app/shared/little-card/little-card.component';
+import { RoadmapValidateComponent } from './roadmap-validate/roadmap-validate.component';
 
 
 @NgModule({
@@ -85,7 +89,10 @@ import {PaginatorModule} from 'primeng/paginator';
     TableStoreComponent,
     TableChallengerComponent,
     FormChallengerComponent,
-    AddRoadmapComponent
+    AddRoadmapComponent,
+    ValidationsComponent,
+    LittleCardComponent,
+    RoadmapValidateComponent
   ],
   imports: [
     CommonModule,
@@ -111,7 +118,8 @@ import {PaginatorModule} from 'primeng/paginator';
     TableModule,
     RadioButtonModule,
     InputTextareaModule,
-    PaginatorModule
+    PaginatorModule,
+    TabViewModule
   ],
   providers: [RouterGuardAdmin, RouterGuardAluno]
 })

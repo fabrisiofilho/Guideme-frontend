@@ -32,3 +32,24 @@ body {
   flex-direction: column;
   overflow-x: auto;
 }
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+  border-radius: 20px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f100;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(101, 101, 101, 0.724);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

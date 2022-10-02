@@ -1,6 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { faPen } from '@fortawesome/free-solid-svg-icons';
+import { DynamicDialogConfig, DynamicDialogRef } from 'primeng/dynamicdialog';
+import { AuthService } from 'src/app/security/auth.service';
+import { User } from 'src/app/security/models/user';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -16,8 +19,13 @@ export class ConfigComponent implements OnInit {
 
   userForm: FormGroup;
 
+  @Output()
+  alterUser = new EventEmitter<User>();
+
   constructor(formBuilder: FormBuilder,
-    private userService: UserService) {
+    private userService: UserService,
+    public ref: DynamicDialogRef,
+    public config: DynamicDialogConfig) {
     this.userForm = formBuilder.group({
       id: [{value: null, disabled: true}, [Validators.required]],
       name: [{value: null, disabled: true}, [Validators.required]],
@@ -43,6 +51,7 @@ export class ConfigComponent implements OnInit {
     this.userService.uploadLogo(event.files[0]).subscribe(it => {
       this.urlPhoto = it.urlPhoto;
       localStorage.setItem("urlPhoto", it.urlPhoto);
+      this.ref.close(it);
     });
   }
 
@@ -60,6 +69,7 @@ export class ConfigComponent implements OnInit {
         this.userForm.controls['name'].setValue(it.name);
         this.userForm.controls['password'].setValue(it.password);
         this.userForm.controls['email'].setValue(it.email);
+        this.ref.close(it);
       });
     }
   }
