@@ -2732,8 +2732,8 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
   border: 1px solid #404040;
   border-width: 0 0 1px 0;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.87);
-  background: #1e1e1e;
+  color: white;
+  background: rgba(255, 255, 255, 0.300);
   transition: none;
 }
 .p-datatable .p-datatable-tfoot > tr > td {
@@ -2743,7 +2743,7 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
   border-width: 0 0 1px 0;
   font-weight: 500;
   color: rgba(255, 255, 255, 0.87);
-  background: #1e1e1e;
+  background: rgba(255, 255, 255, 0.057);
 }
 .p-datatable .p-sortable-column .p-sortable-column-icon {
   color: rgba(255, 255, 255, 0.6);
@@ -2784,7 +2784,7 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
   outline: 0 none;
 }
 .p-datatable .p-datatable-tbody > tr {
-  background: #1e1e1e;
+  background: rgba(255, 255, 255, 0.10);
   color: rgba(255, 255, 255, 0.87);
   transition: none;
 }
