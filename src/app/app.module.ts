@@ -22,7 +22,7 @@ import {ProgressBarModule} from 'primeng/progressbar';
 import {FileUploadModule} from 'primeng/fileupload';
 import {ProgressSpinnerModule} from 'primeng/progressspinner';
 import {OverlayPanelModule} from 'primeng/overlaypanel';
-
+import {PanelModule} from 'primeng/panel';
 
 @NgModule({
   declarations: [
@@ -44,6 +44,7 @@ import {OverlayPanelModule} from 'primeng/overlaypanel';
     FileUploadModule,
     ProgressSpinnerModule,
     OverlayPanelModule,
+    PanelModule,
 
     PublicModule,
     PrivateModule,

@@ -20,6 +20,7 @@ export class FormChallengerComponent implements OnInit {
               private challengerService: ChallengerService) {
     if (this.config.data?.challenger) {
       const item = this.config.data.challenger;
+      console.log(item);
       this.challengerForm = formBuilder.group({
         id: [item.id, [Validators.required]],
         bountyCoin: [item.bountyCoin, [Validators.required]],

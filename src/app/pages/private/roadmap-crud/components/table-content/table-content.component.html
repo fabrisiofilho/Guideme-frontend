@@ -1,0 +1,71 @@
+<p-panel header="Adicionar conteudo" [toggleable]="true">
+  <form
+  [formGroup]="contentForm"
+  (ngSubmit)="register()"
+  class="flex justify-content-center align-items-center flex-column">
+
+  <span class="p-float-label p-fluid mb-2 mt-2 w-full">
+    <input type="text" id="inputtext" formControlName="title" pInputText>
+    <label for="inputtext">Nome do artigo</label>
+  </span>
+
+  <span class="p-float-label p-fluid mb-2 mt-2 w-full">
+    <textarea pInputTextarea formControlName="payload" [autoResize]="true"></textarea>
+    <label>Conteudo do artigo</label>
+  </span>
+
+  <span class="p-float-label p-fluid mb-2 mt-2 w-full">
+    <input type="text" id="inputtext" formControlName="urlVideo" pInputText>
+    <label for="inputtext">URL do Video</label>
+  </span>
+
+  <span class="p-float-label p-fluid mb-2 mt-2 w-full">
+    <input type="text" id="inputtext" formControlName="linkOne" pInputText>
+    <label for="inputtext">Link do video de apoio (1)</label>
+  </span>
+
+  <span class="p-float-label p-fluid mb-2 mt-2 w-full">
+    <input type="text" id="inputtext" formControlName="linkTwo" pInputText>
+    <label for="inputtext">Link do video de apoio (2)</label>
+  </span>
+
+  <span class="p-float-label p-fluid mb-2 mt-2 w-full">
+    <input type="text" id="inputtext" formControlName="linkTree" pInputText>
+    <label for="inputtext">Link do video de apoio (3)</label>
+  </span>
+
+  <button pButton pRipple type="submit" label="Adicionar novo conteudo" class="p-button-outlined p-fluid w-full mt-4"></button>
+
+</form>
+
+</p-panel>
+
+<p-table [value]="content">
+  <ng-template pTemplate="header">
+      <tr>
+          <th>Título</th>
+          <th>Artigo escrito</th>
+          <th>Link do video</th>
+          <th>Link para auxilio (1)</th>
+          <th>Link para auxilio (2)</th>
+          <th>Link para auxilio (3)</th>
+          <th></th>
+      </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-content>
+      <tr>
+          <td>{{content.title}}</td>
+          <td>{{content.payload}}</td>
+          <td>{{content.urlVideo}}</td>
+          <td>{{content.linkOne}}</td>
+          <td>{{content.linkTwo}}</td>
+          <td>{{content.linkTree}}</td>
+          <td>
+            <button pButton pRipple type="button" icon=faTrash class="p-button-rounded p-button-text" (click)="deleteContent(content)">
+              <fa-icon [icon]="faTrash" [size]=size>
+              </fa-icon>
+            </button>
+          </td>
+      </tr>
+  </ng-template>
+</p-table>

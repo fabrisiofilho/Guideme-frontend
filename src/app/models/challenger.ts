@@ -5,5 +5,6 @@ export interface Challenger {
   result: string;
   bountyCoin: number;
   bountyXp: number;
+  points: number;
   isDone: boolean;
 }

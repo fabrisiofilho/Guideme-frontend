@@ -25,7 +25,7 @@ const routes: Routes = [
     canActivate: [RouterGuardAluno]
   },
   {
-    path:'roadmap/validate',
+    path:'roadmap/validate/:id',
     component: RoadmapValidateComponent,
     canActivate: [RouterGuardAluno]
   },

@@ -1,4 +1,5 @@
 import { Content } from "./content";
+import { Question } from "./question";
 
 export interface Step {
   id: number;
@@ -11,4 +12,5 @@ export interface Step {
   contents: Content[];
   isDone: boolean;
   isOpen: boolean;
+  questions: Question;
 }

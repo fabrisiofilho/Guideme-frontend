@@ -1,0 +1,29 @@
+<form
+  [formGroup]="stepForm"
+  (ngSubmit)="register()"
+  class="flex justify-content-center align-items-center flex-column">
+
+  <span class="p-float-label p-fluid mb-2 mt-2 w-full">
+    <input type="text" id="inputtext" formControlName="title" pInputText>
+    <label for="inputtext">Nome da etapa</label>
+  </span>
+
+  <span class="p-float-label p-fluid mb-2 mt-2 w-full">
+    <input type="text" id="inputtext" formControlName="bountyCoin" pInputText>
+    <label for="inputtext">Recompensa em Coin</label>
+  </span>
+
+  <span class="p-float-label p-fluid mb-2 mt-2 w-full">
+    <input type="text" id="inputtext" formControlName="bountyXp" pInputText>
+    <label for="inputtext">Recompensa em XP</label>
+  </span>
+
+  <span class="p-fluid mb-2 mt-2 w-full flex flex-column align-items-center justify-content-center">
+    <label for="inputtext">Dificuldade</label>
+    <p-rating formControlName="difficulty" [cancel]="false"></p-rating>
+  </span>
+
+  <app-table-content #table [content]="content" class="mt-4 w-full"></app-table-content>
+
+  <p-button label="Cadastrar" type="submit" class="mt-4 p-fluid w-full"></p-button>
+</form>

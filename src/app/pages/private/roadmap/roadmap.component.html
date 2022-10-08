@@ -3,7 +3,7 @@
     <guideme-nav class="sticky z-5 w-full" style="top:32px;"></guideme-nav>
     <div class="body-content">
       <div class="content">
-        <system-roadmap *ngIf="!loading" [roadmap]="roadmap!"></system-roadmap>
+        <system-roadmap *ngIf="!loading" [roadmap]="roadmap!" (validatationEvent)="openValidation($event)"></system-roadmap>
         <span class="col flex justify-content-center" *ngIf="roadmap == null" style="color: gray;">Nenhum roadmap cadastrado</span>
       </div>
     </div>

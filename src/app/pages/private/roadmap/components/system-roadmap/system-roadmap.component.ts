@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { SizeProp } from '@fortawesome/fontawesome-svg-core';
 import { faPersonDigging } from '@fortawesome/free-solid-svg-icons';
 import { MessageService } from 'primeng/api';
@@ -17,6 +17,9 @@ export class SystemRoadmapComponent implements OnInit {
 
   @Input()
   roadmap!: Roadmap;
+
+  @Output()
+  validatationEvent = new EventEmitter<Step>;
 
   faPersonDigging = faPersonDigging;
 
@@ -38,6 +41,9 @@ export class SystemRoadmapComponent implements OnInit {
         header: event.title,
         width: '70%',
         height: '80%'
+      });
+      ref.onClose.subscribe(it => {
+        this.validatationEvent?.emit(it);
       });
       return;
     }

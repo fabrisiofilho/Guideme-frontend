@@ -2,8 +2,10 @@
   <div class="w-full">
     <guideme-nav class="sticky z-5 w-full" style="top:32px;"></guideme-nav>
     <div class="body-content flex-column">
-      <add-step style="margin-bottom: 15px;"></add-step>
-      <creater-roadmap [roadmap]=roadmap ></creater-roadmap>
+      <div class="flex justify-content-end w-full road" *ngIf="roadmap">
+        <add-step style="margin-bottom: 15px;" (addLayerEvent)="attRoadmap($event)"></add-step>
+      </div>
+      <creater-roadmap [roadmap]=roadmap class="road" (attRoadmap)="attRoadmap($event)"></creater-roadmap>
     </div>
   </div>
 </div>

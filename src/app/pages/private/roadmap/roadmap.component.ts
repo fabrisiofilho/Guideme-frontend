@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Roadmap } from 'src/app/models/roadmap';
+import { Step } from 'src/app/models/step';
 import { RoadmapService } from 'src/app/services/roadmap.service';
 
 @Component({
@@ -13,7 +15,8 @@ export class RoadmapComponent implements OnInit {
 
   roadmap?: Roadmap;
 
-  constructor(private roadmapService: RoadmapService) {
+  constructor(private roadmapService: RoadmapService,
+              private router: Router) {
     this.getRoadmap();
   }
 
@@ -34,6 +37,10 @@ export class RoadmapComponent implements OnInit {
       });
       this.loading = false;
     });
+  }
+
+  openValidation(step: Step) {
+    this.router.navigate(['roadmap/validate/' + step.id]);
   }
 
 }

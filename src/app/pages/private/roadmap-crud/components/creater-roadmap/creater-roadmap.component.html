@@ -1,5 +1,10 @@
 <div class="flex align-items-center flex-column roadmap">
-  <div class="create-roadmap with-roadmap">
+  <div *ngIf="roadmap === undefined">
+    <h3 style="color: gray;">
+      Não há nenhuma trilha cadastrada.
+    </h3>
+  </div>
+  <div class="create-roadmap w-full mb-3">
     <div *ngIf="roadmap !== undefined" class="flex align-items-center justify-content-center w-full">
       <h1>
         {{roadmap.title}}
@@ -7,25 +12,30 @@
     </div>
   </div>
   <div *ngFor="let layer of roadmap?.layers" style="max-width: 1000px; width: 100%;">
-    <div class="step" *ngFor="let item of layer.steps">
+    <div class="w-full flex justify-content-between align-item-center">
+      <div style="width: 48px;">
+      </div>
+      <div>
+        <button pButton pRipple type="button" icon=faTrash class="p-button-rounded p-button-text" (click)="deleteLayer(layer.id)">
+          <fa-icon [icon]="faTrash" [size]=size>
+          </fa-icon>
+        </button>
+      </div>
+    </div>
+    <div class="step my-2" *ngFor="let item of layer.steps">
       <h2>{{item.title}}</h2>
       <div class="flex align-items-center">
-        <div class="layer bg-primary">
-          {{layer.id}}
-          <fa-icon [icon]="faLayerGroup" [size]=size>
-          </fa-icon>
-        </div>
-        <div class="layer bg-primary">
+        <div class="layer p-1 px-4 py-1">
           {{item.bountyXp}}
           <fa-icon [icon]="faFeatherPointed" [size]=size>
           </fa-icon>
         </div>
-        <div class="layer bg-primary mr-1">
+        <div class="layer mr-1 px-4 py-1">
           {{item.bountyCoin}}
           <fa-icon [icon]="faCoins" [size]=size>
           </fa-icon>
         </div>
-        <button pButton pRipple type="button" icon=faPencil class="p-button-rounded p-button-success btn m-1">
+        <button pButton pRipple type="button" icon=faPencil class="p-button-rounded p-button-success btn m-1" (click)="openUpdateStep(item)">
           <fa-icon [icon]="faPencil" [size]=size>
           </fa-icon>
         </button>
@@ -33,8 +43,13 @@
           <fa-icon [icon]="faTrash" [size]=size>
           </fa-icon>
         </button>
+        <button pButton pRipple type="button" icon=faFile class="p-button-rounded p-button-secondary btn m-1" style="background-color: black;" (click)="formValidate(item)">
+          <fa-icon [icon]="faFile" [size]=size>
+          </fa-icon>
+        </button>
       </div>
     </div>
-
+    <p-button label="Adicionar etapa" class="p-fluid" (click)="openAddStep(layer.id)"></p-button>
+    <p-divider></p-divider>
   </div>
 </div>

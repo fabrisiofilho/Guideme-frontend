@@ -1,9 +1,7 @@
 <form
   [formGroup]="validateForm"
-  (ngSubmit)="validar()"
-  class="flex justify-content-center align-items-center flex-column p-4">
-
-  <h2>{{step?.title}}</h2>
+  (ngSubmit)="register()"
+  class="flex justify-content-center align-items-center flex-column">
 
   <span class="p-float-label p-fluid mb-2 mt-2 w-full">
     <input type="text" id="inputtext" formControlName="questionOne" pInputText>
@@ -65,6 +63,5 @@
 
   <p-divider class="w-full"></p-divider>
 
-  <p-button label="Avançar" type="submit" class="mt-4 p-fluid w-full"></p-button>
-  <p-button label="Voltar" type="button" class="mt-4 p-fluid w-full" (click)="voltar()"></p-button>
+  <p-button label="Cadastrar" type="submit" class="mt-4 p-fluid w-full"></p-button>
 </form>

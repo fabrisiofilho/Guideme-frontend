@@ -58,7 +58,10 @@ import {TabViewModule} from 'primeng/tabview';
 import { ValidationsComponent } from 'src/app/shared/validations/validations.component';
 import { LittleCardComponent } from 'src/app/shared/little-card/little-card.component';
 import { RoadmapValidateComponent } from './roadmap-validate/roadmap-validate.component';
-
+import { FormRoadmapComponent } from './roadmap-crud/components/form-roadmap/form-roadmap.component';
+import { TableContentComponent } from './roadmap-crud/components/table-content/table-content.component';
+import {PanelModule} from 'primeng/panel';
+import { FormValidateComponent } from './roadmap-crud/components/form-validate/form-validate.component';
 
 @NgModule({
   declarations: [
@@ -92,7 +95,10 @@ import { RoadmapValidateComponent } from './roadmap-validate/roadmap-validate.co
     AddRoadmapComponent,
     ValidationsComponent,
     LittleCardComponent,
-    RoadmapValidateComponent
+    RoadmapValidateComponent,
+    FormRoadmapComponent,
+    TableContentComponent,
+    FormValidateComponent
   ],
   imports: [
     CommonModule,
@@ -119,7 +125,8 @@ import { RoadmapValidateComponent } from './roadmap-validate/roadmap-validate.co
     RadioButtonModule,
     InputTextareaModule,
     PaginatorModule,
-    TabViewModule
+    TabViewModule,
+    PanelModule
   ],
   providers: [RouterGuardAdmin, RouterGuardAluno]
 })
