@@ -2,13 +2,13 @@
   <div *ngFor="let item of step.contents">
     <h1>{{item.title}}</h1>
     <p>{{item.payload}}</p>
-    <video width="640" height="360" controls>
+    <video width="640" height="360" controls *ngIf="item.urlVideo">
       <source src="{{item.urlVideo}}" type="video/mp4">
     </video>
     <div class="flex justify-content-around align-items-center mt-2">
-      <button pButton pRipple type="button" label="W3Schools" class="p-button-rounded p-button-warning" (click)="openWindow(item.linkOne)"></button>
-      <button pButton pRipple type="button" label="Course" class="p-button-rounded p-button-secondary" (click)="openWindow(item.linkTwo)"></button>
-      <button pButton pRipple type="button" label="Introdution" class="p-button-rounded p-button-success" (click)="openWindow(item.linkTree)"></button>
+      <button pButton pRipple type="button" label="Primeira referencia" class="p-button-rounded p-button-warning" (click)="openWindow(item.linkOne)"></button>
+      <button pButton pRipple type="button" label="Segunda referencia" class="p-button-rounded p-button-secondary" (click)="openWindow(item.linkTwo)"></button>
+      <button pButton pRipple type="button" label="Terceira referencia" class="p-button-rounded p-button-success" (click)="openWindow(item.linkTree)"></button>
     </div>
   </div>
   <p-button *ngIf="!step.isDone" class="mt-5" label="Realizar validação de modulo" [disabled]="step.isDone" (click)="openValidation()"></p-button>
