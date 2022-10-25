@@ -26,6 +26,7 @@ export class TableContentComponent implements OnInit {
       id: [null],
       title: [null, [Validators.required]],
       payload: [null, [Validators.required]],
+      code: [null],
       urlVideo: [null],
       linkOne: [null],
       linkTwo: [null],

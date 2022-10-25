@@ -2,6 +2,7 @@
   <div *ngFor="let item of step.contents">
     <h1>{{item.title}}</h1>
     <p>{{item.payload}}</p>
+    <code *ngIf="item.code">{{item.code}}</code>
     <div class="flex justify-content-center mt-3 mb-5">
       <video width="640" height="360" controls *ngIf="item.urlVideo">
         <source src="{{item.urlVideo}}" type="video/mp4">
