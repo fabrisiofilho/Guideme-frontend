@@ -26,10 +26,10 @@ export class TableContentComponent implements OnInit {
       id: [null],
       title: [null, [Validators.required]],
       payload: [null, [Validators.required]],
-      urlVideo: [null, [Validators.required]],
-      linkOne: [null, [Validators.required]],
-      linkTwo: [null, [Validators.required]],
-      linkTree: [null, [Validators.required]]
+      urlVideo: [null],
+      linkOne: [null],
+      linkTwo: [null],
+      linkTree: [null]
     });
   }
 
