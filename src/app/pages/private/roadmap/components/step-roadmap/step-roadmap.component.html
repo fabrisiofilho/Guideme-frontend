@@ -1,5 +1,5 @@
 <div class="flex justify-content-center align-items-center flex-column">
-  <div *ngFor="let item of step.contents">
+  <div *ngFor="let item of step.contents" class="w-full">
     <h1>{{item.title}}</h1>
     <p>{{item.payload}}</p>
     <code *ngIf="item.code">{{item.code}}</code>
