@@ -24,7 +24,7 @@ export class TableContentComponent implements OnInit {
               private roadmapService: RoadmapService) {
     this.contentForm = formBuilder.group({
       id: [null],
-      title: [null, [Validators.required]],
+      title: [null],
       payload: [null, [Validators.required]],
       code: [null],
       urlVideo: [null],
