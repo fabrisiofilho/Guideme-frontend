@@ -25,6 +25,7 @@
     <div class="flex justify-content-center align-items-center perfil p-0" style="width: 48px;height: 48px;" (click)="menu.toggle($event)">
       <!-- <div style="color: rgb(255, 255, 255); font-weight: 500;" class="p-4 text-center">{{name()}}</div> -->
       <img src={{photo()}} alt="" style="width: 32px;height: 32px; object-fit: cover; border-radius: 50%;">
+      <img src={{photo()}} alt="" style="width: 32px;height: 32px; object-fit: cover; border-radius: 50%;">
     </div>
   </div>
   <p-menu #menu [popup]="true" [model]="items"></p-menu>
