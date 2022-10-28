@@ -50,9 +50,9 @@ export class RankingComponent implements OnInit {
     });
   }
 
-  photo() {
-    if (localStorage.getItem("photo")) {
-      return localStorage.getItem("photo");
+  photo(stringurl: string) {
+    if (stringurl) {
+      return stringurl;
     }
     return 'https://s3.amazonaws.com/sample-login/users/avatars/blank_avatar.png';
   }
