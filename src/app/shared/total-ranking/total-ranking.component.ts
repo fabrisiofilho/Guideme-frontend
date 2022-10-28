@@ -30,6 +30,11 @@ export class TotalRankingComponent implements OnInit {
     });
   }
 
-
+  photo(stringurl: string) {
+    if (stringurl) {
+      return stringurl;
+    }
+    return 'https://s3.amazonaws.com/sample-login/users/avatars/blank_avatar.png';
+  }
 
 }
