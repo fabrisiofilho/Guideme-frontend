@@ -82,7 +82,7 @@ export class NavComponent implements OnInit {
     if (this.user?.urlPhoto) {
       return this.user.urlPhoto;
     }
-    return 'https://www.freeiconspng.com/thumbs/person-icon/clipart--person-icon--cliparts-15.png';
+    return 'https://s3.amazonaws.com/sample-login/users/avatars/blank_avatar.png';
   }
 
   name() {
