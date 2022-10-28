@@ -40,10 +40,6 @@ export class RankingComponent implements OnInit {
     }
   }
 
-  photo() {
-    return localStorage.getItem("photo");
-  }
-
   openTotalRanking() {
     const ref = this.dialogService.open(TotalRankingComponent, {
       data: {
@@ -54,6 +50,12 @@ export class RankingComponent implements OnInit {
     });
   }
 
+  photo() {
+    if (localStorage.getItem("photo")) {
+      return localStorage.getItem("photo");
+    }
+    return 'https://s3.amazonaws.com/sample-login/users/avatars/blank_avatar.png';
+  }
 
 
 }
