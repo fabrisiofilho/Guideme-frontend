@@ -1,9 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { faAlignJustify, faCompass, faFeatherPointed, faGamepad, faGraduationCap, faRankingStar, faSquarePen } from '@fortawesome/free-solid-svg-icons';
+import { DialogService } from 'primeng/dynamicdialog';
 import { Challenger } from 'src/app/models/challenger';
 import { Pageable } from 'src/app/models/pageable';
 import { ChallengerService } from 'src/app/services/challenger.service';
+import { UserService } from 'src/app/services/user.service';
+import { NavComponent } from 'src/app/shared/nav/nav.component';
+import { ValidationsComponent } from 'src/app/shared/validations/validations.component';
 
 @Component({
   selector: 'app-home',
@@ -30,7 +34,10 @@ export class HomeComponent implements OnInit {
 
   text: string = "Realizar";
 
+  @ViewChild('nav') navElement: NavComponent | undefined;
+
   constructor(private challengerService: ChallengerService,
+              private dialogService: DialogService,
               private router: Router) { }
 
   ngOnInit(): void {
@@ -47,6 +54,20 @@ export class HomeComponent implements OnInit {
 
   irAoRoadmap() {
     this.router.navigate(['/roadmap']);
+  }
+
+  realizarDesafio(challenger: Challenger) {
+    const ref = this.dialogService.open(ValidationsComponent, {
+      data: {
+        challenger: challenger
+      },
+      header: challenger.title,
+    });
+
+    ref.onClose.subscribe((status: string) => {
+      this.navElement?.findPointsAndCoins();
+      this.buscarItens("");
+    });
   }
 
 }

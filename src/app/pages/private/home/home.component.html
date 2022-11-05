@@ -1,6 +1,6 @@
 <div class="flex p-5">
   <div class="w-full">
-    <guideme-nav class="sticky z-5 w-full" style="top:32px;"></guideme-nav>
+    <guideme-nav class="sticky z-5 w-full" style="top:32px;" #nav></guideme-nav>
     <div class="body-content background-star">
       <div class="w-full">
         <div class="flex flex-column justify-content-center align-items-center">
@@ -21,7 +21,7 @@
           <div class="flex flex-column col-12 justify-content-center" style="max-height: 440px; max-width: 1150px;">
             <h3 class="flex justify-content-center">Ultimos desafios adicionados</h3>
             <div class="grid overflow-hidden justify-content-center">
-              <guideme-card class="col-fixed flex justify-content-center" *ngFor="let item of item" [item]="item" [buttonText]="text" [icon]="faFeatherPointed"></guideme-card>
+              <guideme-card class="col-fixed flex justify-content-center" *ngFor="let item of item" [item]="item" [buttonText]="text" [icon]="faFeatherPointed" (clickButton)="realizarDesafio($event)"></guideme-card>
               <span class="col flex justify-content-center" style="color: gray;" *ngIf="item.length === 0">Não foi registrado nenhum desafio</span>
             </div>
           </div>
