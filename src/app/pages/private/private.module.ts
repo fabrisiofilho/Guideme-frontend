@@ -62,7 +62,6 @@ import { FormRoadmapComponent } from './roadmap-crud/components/form-roadmap/for
 import { TableContentComponent } from './roadmap-crud/components/table-content/table-content.component';
 import {PanelModule} from 'primeng/panel';
 import { FormValidateComponent } from './roadmap-crud/components/form-validate/form-validate.component';
-
 @NgModule({
   declarations: [
     HomeComponent,

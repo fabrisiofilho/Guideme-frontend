@@ -36,5 +36,4 @@ export class StepRoadmapComponent implements OnInit {
   openValidation() {
     this.ref.close(this.step);
   }
-
 }
