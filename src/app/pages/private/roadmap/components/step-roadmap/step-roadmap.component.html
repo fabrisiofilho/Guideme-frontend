@@ -10,6 +10,7 @@
     <div class="flex justify-content-center mt-3 mb-5">
       <iframe width="640" height="360"
         *ngIf="item.urlVideo"
+        type="text/html"
         [src]="transform(item.urlVideo)"
         frameborder="0">
       </iframe>
