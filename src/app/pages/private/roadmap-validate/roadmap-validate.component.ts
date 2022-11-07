@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Question } from 'src/app/models/question';
 import { Step } from 'src/app/models/step';
 import { RoadmapService } from 'src/app/services/roadmap.service';
+import { ToastMessageService } from 'src/app/services/toast-message.service';
 
 @Component({
   selector: 'app-roadmap-validate',
@@ -24,6 +25,7 @@ export class RoadmapValidateComponent implements OnInit {
 
   constructor(private roadmapService: RoadmapService,
               private formBuilder: FormBuilder,
+              private toastMessage: ToastMessageService,
               private route: ActivatedRoute,
               private router: Router) {
               this.validateForm = this.formBuilder.group({});
@@ -66,10 +68,15 @@ export class RoadmapValidateComponent implements OnInit {
   validar() {
     if (this.validateForm.valid) {
       const value = this.validateForm.getRawValue();
-      this.roadmapService.validate(value).subscribe(it => {
-        console.log("Validou");
-        this.router.navigate(['/roadmap']);
-      });
+      this.roadmapService.validate(value).subscribe({
+        next:(it) => {
+          this.toastMessage.addSingle("success", "Sucesso", "Parabéns ao concluir o module:" + this.step?.title);
+          this.router.navigate(['/roadmap']);
+        },
+        error:() => {
+          this.toastMessage.addSingle("error", "Erro", "Tente novamente, há respostas incorretas.");
+        }}
+      );
     }
   }
 
