@@ -2,8 +2,8 @@
   <div *ngFor="let item of step.contents" class="w-full">
     <h1>{{item.title}}</h1>
     <p>{{item.payload}}</p>
-    <div class="p-3 w-full code">
-      <code *ngIf="item.code">
+    <div *ngIf="item.code" class="p-3 w-full code">
+      <code>
         {{item.code}}
       </code>
     </div>
