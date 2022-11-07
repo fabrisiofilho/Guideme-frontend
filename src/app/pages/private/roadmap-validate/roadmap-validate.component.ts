@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Question } from 'src/app/models/question';
 import { Step } from 'src/app/models/step';
 import { RoadmapService } from 'src/app/services/roadmap.service';
 
@@ -15,11 +16,17 @@ export class RoadmapValidateComponent implements OnInit {
 
   validateForm!: FormGroup;
 
+  listQuestion1: any[] = [];
+  listQuestion2: any[] = [];
+  listQuestion3: any[] = [];
+  listQuestion4: any[] = [];
+  listQuestion5: any[] = [];
+
   constructor(private roadmapService: RoadmapService,
               private formBuilder: FormBuilder,
               private route: ActivatedRoute,
               private router: Router) {
-                this.createForm();
+              this.validateForm = this.formBuilder.group({});
             }
 
   ngOnInit(): void {
@@ -47,6 +54,13 @@ export class RoadmapValidateComponent implements OnInit {
       responseFive: [null, [Validators.required]],
       stepId: [this.step?.id, [Validators.required]]
     });
+
+    this.listQuestion1 = this.randomOptions(this.step?.questions?.responseOne, this.step?.questions?.optionsOne);
+    this.listQuestion2 = this.randomOptions(this.step?.questions?.responseTwo, this.step?.questions?.optionsTwo);
+    this.listQuestion3 = this.randomOptions(this.step?.questions?.responseThree, this.step?.questions?.optionsThree);
+    this.listQuestion4 = this.randomOptions(this.step?.questions?.responseFour, this.step?.questions?.optionsFour);
+    this.listQuestion5 = this.randomOptions(this.step?.questions?.responseFive, this.step?.questions?.optionsFive);
+
   }
 
   validar() {
@@ -63,4 +77,19 @@ export class RoadmapValidateComponent implements OnInit {
     this.router.navigate(['/roadmap']);
   }
 
+  randomOptions(right: string | undefined, options: string | undefined) {
+    let list = options!.split(";");
+    list.push(right!);
+    return this.shuffleArray(list);
+  }
+
+  shuffleArray(arr: any[]) {
+    for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
+  }
+
 }
+

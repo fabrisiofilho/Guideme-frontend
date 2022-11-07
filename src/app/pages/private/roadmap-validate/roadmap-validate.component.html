@@ -9,11 +9,12 @@
     <label for="inputtext">Primeira Questão</label>
     <br>
     <span>{{this.step?.questions?.questionOne}}</span>
-  </span>
-
-  <span class="p-float-label p-fluid mb-2 mt-2 w-full">
-    <input type="text" id="inputtext" formControlName="responseOne" pInputText>
-    <label for="inputtext">Resposta</label>
+    </span>
+   <span class="mb-2 mt-2 w-full">
+    <div *ngFor="let item of this.listQuestion1; let i = index" class="field-radiobutton">
+      <p-radioButton name="responseOne" [value]=item formControlName="responseOne" inputId="{{'response1' + i}}"></p-radioButton>
+      <label for="{{'response1' + i}}">{{item}}</label>
+    </div>
   </span>
 
   <p-divider class="w-full"></p-divider>
@@ -24,9 +25,11 @@
     <span>{{this.step?.questions?.questionTwo}}</span>
   </span>
 
-  <span class="p-float-label p-fluid mb-2 mt-2 w-full">
-    <input type="text" id="inputtext" formControlName="responseTwo" pInputText>
-    <label for="inputtext">Resposta</label>
+  <span class="mb-2 mt-2 w-full">
+    <div *ngFor="let item of this.listQuestion2; let i = index" class="field-radiobutton">
+      <p-radioButton name="responseTwo" [value]=item formControlName="responseTwo" inputId="{{'response2' + i}}"></p-radioButton>
+      <label for="{{'response2' + i}}">{{item}}</label>
+    </div>
   </span>
 
   <p-divider class="w-full"></p-divider>
@@ -37,9 +40,11 @@
     <span>{{this.step?.questions?.questionThree}}</span>
   </span>
 
-  <span class="p-float-label p-fluid mb-2 mt-2 w-full">
-    <input type="text" id="inputtext" formControlName="responseThree" pInputText>
-    <label for="inputtext">Resposta</label>
+  <span class="mb-2 mt-2 w-full">
+    <div *ngFor="let item of this.listQuestion3; let i = index" class="field-radiobutton">
+      <p-radioButton name="responseThree" [value]=item formControlName="responseThree" inputId="{{'response3' + i}}"></p-radioButton>
+      <label for="{{'response3' + i}}">{{item}}</label>
+    </div>
   </span>
 
   <p-divider class="w-full"></p-divider>
@@ -50,9 +55,11 @@
     <span>{{this.step?.questions?.questionFour}}</span>
   </span>
 
-  <span class="p-float-label p-fluid mb-2 mt-2 w-full">
-    <input type="text" id="inputtext" formControlName="responseFour" pInputText>
-    <label for="inputtext">Resposta</label>
+  <span class="mb-2 mt-2 w-full">
+    <div *ngFor="let item of this.listQuestion4; let i = index" class="field-radiobutton">
+      <p-radioButton name="responseFour" [value]=item formControlName="responseFour" inputId="{{'response4' + i}}"></p-radioButton>
+      <label for="{{'response4' + i}}">{{item}}</label>
+    </div>
   </span>
 
   <p-divider class="w-full"></p-divider>
@@ -63,9 +70,11 @@
     <span>{{this.step?.questions?.questionFive}}</span>
   </span>
 
-  <span class="p-float-label p-fluid mb-2 mt-2 w-full">
-    <input type="text" id="inputtext" formControlName="responseFive" pInputText>
-    <label for="inputtext">Resposta</label>
+  <span class="mb-2 mt-2 w-full">
+    <div *ngFor="let item of this.listQuestion5; let i = index" class="field-radiobutton">
+      <p-radioButton name="responseFive" [value]=item formControlName="responseFive" inputId="{{'response5' + i}}"></p-radioButton>
+      <label for="{{'response5' + i}}">{{item}}</label>
+    </div>
   </span>
 
   <p-divider class="w-full"></p-divider>

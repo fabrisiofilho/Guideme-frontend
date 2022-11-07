@@ -60,7 +60,7 @@ import { LittleCardComponent } from 'src/app/shared/little-card/little-card.comp
 import { RoadmapValidateComponent } from './roadmap-validate/roadmap-validate.component';
 import { FormRoadmapComponent } from './roadmap-crud/components/form-roadmap/form-roadmap.component';
 import { TableContentComponent } from './roadmap-crud/components/table-content/table-content.component';
-import {PanelModule} from 'primeng/panel';
+import {PanelModule} from 'primeng/panel'
 import { FormValidateComponent } from './roadmap-crud/components/form-validate/form-validate.component';
 @NgModule({
   declarations: [
