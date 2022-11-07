@@ -28,6 +28,7 @@ export class FormChallengerComponent implements OnInit {
         points: [item.points, [Validators.required]],
         question: [item.question, [Validators.required]],
         result: [item.result, [Validators.required]],
+        options: [item.options, [Validators.required]],
         title: [item.title, [Validators.required]]
       });
     } else {
@@ -37,6 +38,7 @@ export class FormChallengerComponent implements OnInit {
         points: [null, [Validators.required]],
         question: [null, [Validators.required]],
         result: [null, [Validators.required]],
+        options: [null, [Validators.required]],
         title: [null, [Validators.required]]
       });
     }

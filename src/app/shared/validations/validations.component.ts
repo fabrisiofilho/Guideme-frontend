@@ -16,6 +16,8 @@ export class ValidationsComponent implements OnInit {
 
   challenger: Challenger;
 
+  listQuestion: any[] = [];
+
   constructor(formBuilder: FormBuilder,
               private toastMessage: ToastMessageService,
               private challengerService: ChallengerService,
@@ -27,6 +29,7 @@ export class ValidationsComponent implements OnInit {
       resposta: [null, [Validators.required]],
     });
 
+    this.listQuestion = this.randomOptions(this.challenger?.result, this.challenger?.options);
   }
 
   ngOnInit(): void {
@@ -46,6 +49,20 @@ export class ValidationsComponent implements OnInit {
         }
       });
     }
+  }
+
+  randomOptions(right: string | undefined, options: string | undefined) {
+    let list = options!.split(";");
+    list.push(right!);
+    return this.shuffleArray(list);
+  }
+
+  shuffleArray(arr: any[]) {
+    for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
   }
 
 }

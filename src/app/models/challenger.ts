@@ -3,6 +3,7 @@ export interface Challenger {
   title: string;
   question: string;
   result: string;
+  options: string;
   bountyCoin: number;
   bountyXp: number;
   points: number;

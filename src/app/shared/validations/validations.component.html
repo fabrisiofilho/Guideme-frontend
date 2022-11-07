@@ -13,10 +13,10 @@
                     </span>
                   </div>
                   <div class="field">
-                    <span class="p-float-label p-fluid mb-2 w-full">
-                      <textarea pInputTextarea [autoResize]="true" formControlName="resposta"></textarea>
-                      <label for="inputtext">Responda aqui</label>
-                    </span>
+                    <div *ngFor="let item of this.listQuestion; let i = index" class="field-radiobutton">
+                      <p-radioButton name="resposta" [value]=item formControlName="resposta" inputId="{{'response2' + i}}"></p-radioButton>
+                      <label for="{{'response2' + i}}">{{item}}</label>
+                    </div>
                   </div>
                   <p-button label="Concluir" type="submit"></p-button>
                 </div>
