@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
     let myTimeout: string | number | NodeJS.Timeout | undefined;
     this.authService.health().subscribe({
       next: () => {
-        clearTimeout(myTimeout);
+        clearTimeout(myTimeout); 
         this.loading = false;
       },
       error: () => {
