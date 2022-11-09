@@ -4,6 +4,7 @@ import { faAlignJustify, faCompass, faFeatherPointed, faGamepad, faGraduationCap
 import { DialogService } from 'primeng/dynamicdialog';
 import { Challenger } from 'src/app/models/challenger';
 import { Pageable } from 'src/app/models/pageable';
+import { AuthService } from 'src/app/security/auth.service';
 import { ChallengerService } from 'src/app/services/challenger.service';
 import { UserService } from 'src/app/services/user.service';
 import { NavComponent } from 'src/app/shared/nav/nav.component';
@@ -15,6 +16,8 @@ import { ValidationsComponent } from 'src/app/shared/validations/validations.com
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+
+  loading: boolean = true;
 
   usuario: String | null = null;
 
@@ -38,9 +41,11 @@ export class HomeComponent implements OnInit {
 
   constructor(private challengerService: ChallengerService,
               private dialogService: DialogService,
+              private authService: AuthService,
               private router: Router) { }
 
   ngOnInit(): void {
+    this.isHealth();
     this.usuario = localStorage.getItem("user");
     this.buscarItens("");
   }
@@ -68,6 +73,20 @@ export class HomeComponent implements OnInit {
       this.navElement?.findPointsAndCoins();
       this.buscarItens("");
     });
+  }
+
+  isHealth() {
+    let myTimeout: string | number | NodeJS.Timeout | undefined;
+    this.authService.health().subscribe({
+      next: () => {
+        clearTimeout(myTimeout);
+        this.loading = false;
+      },
+      error: () => {
+        myTimeout = setTimeout(() => this.isHealth(), 5000);
+        this.loading = true;
+      }
+    })
   }
 
 }

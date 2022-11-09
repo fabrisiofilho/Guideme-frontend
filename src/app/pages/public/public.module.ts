@@ -12,6 +12,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import {ProgressSpinnerModule} from 'primeng/progressspinner';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
     InputTextModule,
     PasswordModule,
     DividerModule,
-    ButtonModule
+    ButtonModule,
+    ProgressSpinnerModule
   ]
 })
 export class PublicModule { }

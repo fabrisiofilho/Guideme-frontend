@@ -1,5 +1,5 @@
 <div class="w-screen h-screen flex flex-column justify-content-center align-items-center background-login">
-  <div class="w-22rem">
+  <div class="w-22rem" *ngIf="!this.loading">
     <div class="w full flex justify-content-center mb-7">
       <div class="font-bold mb-5" style="font-size: 70px;">
         <strong>GUIDEME</strong><i style="color: #7825B9;">.js</i>
@@ -40,5 +40,15 @@
           </div>
       </div>
     </form>
+  </div>
+  <div class="flex justify-content-center align-content-center flex-column" *ngIf="this.loading">
+    <div class="w full flex justify-content-center mb-7">
+      <div class="font-bold mb-5" style="font-size: 70px;">
+        <strong>GUIDEME</strong><i style="color: #7825B9;">.js</i>
+      </div>
+    </div>
+    <div style="height: 290.69px !important;" class="flex justify-content-center align-content-center">
+      <p-progressSpinner class="flex align-items-center justify-content-center" [style]="{width: '100px', height: '100px'}" styleClass="custom-spinner" strokeWidth="5" animationDuration=".5s"></p-progressSpinner>
+    </div>
   </div>
 </div>

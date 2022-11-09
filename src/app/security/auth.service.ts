@@ -45,6 +45,10 @@ export class AuthService {
     return localStorage.getItem('token') != null ? true: false;
   }
 
+  health() {
+    return this.http.get<string>(this.URL + "/health/up");
+  }
+
   logout() {
     localStorage.removeItem("token");
     localStorage.removeItem("refresh_token");
