@@ -120,4 +120,14 @@ export class NavComponent implements OnInit {
     }
   }
 
+  round(x: number) {
+    let level = x / 100 + 1;
+    return level.toFixed();
+  }
+
+  countPorcent(x: number) {
+    let level = x / 100;
+    return (parseInt(level.toFixed()) - level) * 100;
+  }
+
 }

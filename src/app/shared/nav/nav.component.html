@@ -21,6 +21,10 @@
   </div>
 
   <div class="col-6 flex justify-content-end">
+    <div class="flex justify-content-center flex-column mr-3" style="width: 200px;">
+      <span>{{round(this.user?.exps!)}} Level</span>
+      <p-progressBar [value]="countPorcent(this.user?.exps!)"></p-progressBar>
+    </div>
     <notifications *ngIf="this.user?.profile == 'ALUNO'"></notifications>
     <div class="flex justify-content-center align-items-center perfil p-0" style="width: 48px;height: 48px;" (click)="menu.toggle($event)">
       <!-- <div style="color: rgb(255, 255, 255); font-weight: 500;" class="p-4 text-center">{{name()}}</div> -->

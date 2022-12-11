@@ -1,14 +1,9 @@
 <div *ngIf="step.isOpen && !step.isDone" class="card card-open title-background relative">
   <div class="card-content">
-    <h3 class="text-center">
+    <h3 class="text-center mt-4">
       {{step.title}}
     </h3>
-    <h4 class="m-0 flex justify-content-between">
-      <p class="m-1">Conclusão</p>
-      <p class="m-1">0%</p>
-    </h4>
-    <p-progressBar [value]="step.conclusion" class="w-full"></p-progressBar>
-    <div class="placar mt-4">
+    <div class="placar mt-2">
       <p class="m-0">+{{step.bountyXp}} Xp</p>
       <p class="m-0">+{{step.bountyCoin}}
         <fa-icon [icon]="faCoins" [size]=size>
